@@ -26,7 +26,7 @@ public class Rest_controller {
        server.exception(Exception.class, (e,ctx)-> {e.printStackTrace();});
        //TODO: lav endpoints (GET og POST)
        server.get("/login",ctx -> login(ctx));
-
+       server.post("/nystuderende",ctx -> studerende(ctx));
    }
 
    private static void login(@NotNull Context ctx) throws MalformedURLException {
