@@ -1,5 +1,6 @@
 package controller;
 
+import datalayer.Studerende;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
 import logik.Login;
@@ -11,6 +12,8 @@ import java.net.MalformedURLException;
 public class Rest_controller {
    public static Javalin server;
    public static Login login;
+   public static Studerende studerende;
+
    public void stop(){
        server.stop();
        server = null;
@@ -22,6 +25,7 @@ public class Rest_controller {
        server = Javalin.create().start(4548);
        server.exception(Exception.class, (e,ctx)-> {e.printStackTrace();});
        //TODO: lav endpoints (GET og POST)
+       server.get("/login",ctx -> login(ctx));
 
    }
 
@@ -34,5 +38,16 @@ public class Rest_controller {
        } else {
            login.tjekLogin(brugernavn,kodeord);
        }
+    }
+
+    private String studerende(@NotNull Context ctx) {
+       String brugernavn = ctx.queryParam("brugernavn");
+       String gruppe = ctx.queryParam("gruppe");
+       String mail = ctx.queryParam("mail");
+       long ugetid = 0;
+       long projekttid = 0;
+       boolean gruppeleder = ctx.equals(null);
+       studerende = new Studerende(brugernavn, gruppe, ugetid, projekttid, mail, gruppeleder);
+       return studerende.toString();
     }
 }
