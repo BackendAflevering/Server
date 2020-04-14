@@ -1,5 +1,6 @@
 package controller;
 
+import datalayer.Projekt;
 import datalayer.Studerende;
 import io.javalin.Javalin;
 import io.javalin.http.Context;
@@ -12,7 +13,6 @@ import java.net.MalformedURLException;
 public class Rest_controller {
    public static Javalin server;
    public static Login login;
-   public static Studerende studerende;
 
    public void stop(){
        server.stop();
@@ -26,7 +26,11 @@ public class Rest_controller {
        server.exception(Exception.class, (e,ctx)-> {e.printStackTrace();});
        //TODO: lav endpoints (GET og POST)
        server.get("/login",ctx -> login(ctx));
-       server.post("/nystuderende",ctx -> studerende(ctx));
+       server.get("/studerende",ctx -> getStuderende(ctx));
+       server.get("/projekt",ctx -> getProjekt(ctx));
+       server.post("/nystuderende",ctx -> nyStuderende(ctx));
+       server.post("/nytprojekt",ctx -> projekt(ctx));
+
    }
 
    private static void login(@NotNull Context ctx) throws MalformedURLException {
@@ -40,14 +44,18 @@ public class Rest_controller {
        }
     }
 
-    private String studerende(@NotNull Context ctx) {
-       String brugernavn = ctx.queryParam("brugernavn");
-       String gruppe = ctx.queryParam("gruppe");
-       String mail = ctx.queryParam("mail");
-       long ugetid = 0;
-       long projekttid = 0;
-       boolean gruppeleder = ctx.equals(null);
-       studerende = new Studerende(brugernavn, gruppe, ugetid, projekttid, mail, gruppeleder);
-       return studerende.toString();
+    private static void nyStuderende(@NotNull Context ctx) {
+       Studerende studerende = ctx.bodyAsClass(Studerende.class);
+    }
+
+    private static void projekt(@NotNull Context ctx){
+        Projekt projekt = ctx.bodyAsClass(Projekt.class);
+    }
+
+    private static void getStuderende(@NotNull Context ctx){
+
+    }
+    private static void getProjekt(@NotNull Context ctx){
+
     }
 }
