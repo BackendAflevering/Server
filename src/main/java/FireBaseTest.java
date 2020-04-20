@@ -27,7 +27,9 @@ public class FireBaseTest {
     }
 
     public Firestore initializeConnection() throws IOException {
-        String path = "C:/Users/Mark/IdeaProjects/Server/src/ServiceAccountKey.json";
+        System.out.println("Working Directory = " + System.getProperty("user.dir"));
+        String path = System.getProperty("user.dir")+"/src/main/java/ServiceAccountKey.json"; //sets key to current dir
+
         FileInputStream serviceAccount = new FileInputStream(path);
 
         FirebaseOptions options = new FirebaseOptions.Builder()
