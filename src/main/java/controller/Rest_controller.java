@@ -49,7 +49,7 @@ public class Rest_controller {
     }
 
     private static void projekt(@NotNull Context ctx){
-        Projekt projekt = ctx.bodyAsClass(Projekt.class);
+       Projekt projekt = ctx.bodyAsClass(Projekt.class);
     }
 
     private static void getStuderende(@NotNull Context ctx){

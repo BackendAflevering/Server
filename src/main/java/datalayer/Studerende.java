@@ -3,6 +3,7 @@ package datalayer;
 public class Studerende {
     private static final long serialVersionUID = 12345;
 
+    private int studerendeID;
     private String brugernavn;
     private String gruppe;
     private long ugetid;
@@ -10,7 +11,8 @@ public class Studerende {
     private String mail;
     private boolean gruppeleder;
 
-    public Studerende(String brugernavn, String gruppe, long ugetid, long projekttid, String mail, boolean gruppeleder){
+    public Studerende(int studerendeID, String brugernavn, String gruppe, long ugetid, long projekttid, String mail, boolean gruppeleder){
+        this.studerendeID = studerendeID;
         this.brugernavn = brugernavn;
         this.gruppe = gruppe;
         this.ugetid = ugetid;
@@ -19,5 +21,16 @@ public class Studerende {
         this.mail = mail;
     }
 
-    public String toString() {return brugernavn+"/"+gruppe+"/"+mail+"/ tid brugt denne uge:"+ugetid+"/ tid brugt dette projekt:"+projekttid;}
+    @Override
+    public String toString() {
+        return "Studerende{" +
+                "studerendeID=" + studerendeID +
+                ", brugernavn='" + brugernavn + '\'' +
+                ", gruppe='" + gruppe + '\'' +
+                ", ugetid=" + ugetid +
+                ", projekttid=" + projekttid +
+                ", mail='" + mail + '\'' +
+                ", gruppeleder=" + gruppeleder +
+                '}';
+    }
 }

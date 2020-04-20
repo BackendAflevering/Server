@@ -5,12 +5,14 @@ import java.util.Arrays;
 public class Projekt {
     private static long serialVersionUID = 54321;
 
+    private int projektID;
     private String projektnavn;
     private long ugetid;
     private long projekttid;
     private Studerende[] medlemmer;
 
-    public Projekt (String projektnavn, long ugetid, long projekttid, Studerende[] medlemmer){
+    public Projekt (int projektID, String projektnavn, long ugetid, long projekttid, Studerende[] medlemmer){
+        this.projektID = projektID;
         this.projektnavn = projektnavn;
         this.ugetid = ugetid;
         this.projekttid = projekttid;

@@ -19,11 +19,13 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99718a6f-3a39-4950-aa36-d984efa549f9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Server.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/datalayer/Projekt.java" afterDir="false" />
+    <list default="true" id="99718a6f-3a39-4950-aa36-d984efa549f9" name="Default Changelist" comment="har lavet nytprojekt og nystuderende handlers i controlleren.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/datalayer/Firebase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/Rest_controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Rest_controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/datalayer/Projekt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datalayer/Projekt.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/datalayer/Studerende.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datalayer/Studerende.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,8 +68,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1586850408899</updated>
-      <workItem from="1586850413383" duration="6049000" />
+      <workItem from="1586850413383" duration="9751000" />
+      <workItem from="1586935640676" duration="674000" />
+      <workItem from="1586936326542" duration="3371000" />
     </task>
+    <task id="LOCAL-00001" summary="har lavet nytprojekt og nystuderende handlers i controlleren.">
+      <created>1586856964899</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1586856964899</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -83,12 +95,17 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="har lavet nytprojekt og nystuderende handlers i controlleren." />
+    <option name="LAST_COMMIT_MESSAGE" value="har lavet nytprojekt og nystuderende handlers i controlleren." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="728" y="221" key="#com.intellij.ide.util.MemberChooser" timestamp="1586852052298">
+    <state x="728" y="221" key="#com.intellij.ide.util.MemberChooser" timestamp="1586857568845">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="728" y="221" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1586852052298" />
+    <state x="728" y="221" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1586857568845" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1586853023415">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -97,5 +114,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1586850770069" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1586856967937">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1586856967937" />
   </component>
 </project>
