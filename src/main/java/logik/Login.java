@@ -10,6 +10,7 @@ import java.net.URL;
 public class Login {
 
     public boolean tjekLogin(String brugernavn, String adgangskode) throws MalformedURLException {
+        System.out.println("Tjeklogin brugernavn: "+brugernavn+ " og tjeklogin kodeord: "+adgangskode);
         URL url = new URL("http://javabog.dk:9901/brugeradmin?wsdl");
         QName qname = new QName("http://soap.transport.brugerautorisation/", "BrugeradminImplService");
         Service service = Service.create(url, qname);
