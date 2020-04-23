@@ -1,36 +1,57 @@
 package datalayer;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class Studerende {
     private static final long serialVersionUID = 12345;
 
-    private int studerendeID;
-    private String brugernavn;
-    private String gruppe;
-    private long ugetid;
-    private long projekttid;
-    private String mail;
-    private boolean gruppeleder;
+    private final String brugernavn;
+    private final String gruppe;
+    private final long ugetid;
+    private final boolean gruppeleder;
+    private final List<String> projekter;
 
-    public Studerende(int studerendeID, String brugernavn, String gruppe, long ugetid, long projekttid, String mail, boolean gruppeleder){
-        this.studerendeID = studerendeID;
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public String getBrugernavn() {
+        return brugernavn;
+    }
+
+    public String getGruppe() {
+        return gruppe;
+    }
+
+    public long getUgetid() {
+        return ugetid;
+    }
+
+    public boolean isGruppeleder() {
+        return gruppeleder;
+    }
+
+    public List<String> getProjekter() {
+        return projekter;
+    }
+
+    public Studerende(String brugernavn, String gruppe, long ugetid, boolean gruppeleder, List<String> projekter){
         this.brugernavn = brugernavn;
         this.gruppe = gruppe;
         this.ugetid = ugetid;
-        this.projekttid = projekttid;
         this.gruppeleder = gruppeleder;
-        this.mail = mail;
+        this.projekter = projekter;
     }
 
     @Override
     public String toString() {
         return "Studerende{" +
-                "studerendeID=" + studerendeID +
                 ", brugernavn='" + brugernavn + '\'' +
                 ", gruppe='" + gruppe + '\'' +
                 ", ugetid=" + ugetid +
-                ", projekttid=" + projekttid +
-                ", mail='" + mail + '\'' +
-                ", gruppeleder=" + gruppeleder +
+                ", gruppeleder=" + gruppeleder +'\''+
+                ",projekter='"+ projekter.toString() +
                 '}';
     }
 }

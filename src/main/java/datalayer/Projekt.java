@@ -1,15 +1,15 @@
 package datalayer;
 
 import java.util.Arrays;
+import java.util.List;
 
 public class Projekt {
     private static long serialVersionUID = 54321;
 
-    private int projektID;
     private String projektnavn;
     private long ugetid;
     private long projekttid;
-    private Studerende[] medlemmer;
+    private List<String> medlemmer;
 
     public static long getSerialVersionUID() {
         return serialVersionUID;
@@ -17,14 +17,6 @@ public class Projekt {
 
     public static void setSerialVersionUID(long serialVersionUID) {
         Projekt.serialVersionUID = serialVersionUID;
-    }
-
-    public int getProjektID() {
-        return projektID;
-    }
-
-    public void setProjektID(int projektID) {
-        this.projektID = projektID;
     }
 
     public String getProjektnavn() {
@@ -51,16 +43,15 @@ public class Projekt {
         this.projekttid = projekttid;
     }
 
-    public Studerende[] getMedlemmer() {
+    public List<String> getMedlemmer() {
         return medlemmer;
     }
 
-    public void setMedlemmer(Studerende[] medlemmer) {
+    public void setMedlemmer(List<String> medlemmer) {
         this.medlemmer = medlemmer;
     }
 
-    public Projekt (int projektID, String projektnavn, long ugetid, long projekttid, Studerende[] medlemmer){
-        this.projektID = projektID;
+    public Projekt  (String projektnavn, long ugetid, long projekttid, List<String> medlemmer){
         this.projektnavn = projektnavn;
         this.ugetid = ugetid;
         this.projekttid = projekttid;
@@ -73,7 +64,7 @@ public class Projekt {
                 "navn='" + projektnavn + '\'' +
                 ", ugetid=" + ugetid +
                 ", projekttid=" + projekttid +
-                ", medlemmer=" + Arrays.toString(medlemmer) +
+                ", medlemmer=" + medlemmer.toString() +
                 '}';
     }
 }

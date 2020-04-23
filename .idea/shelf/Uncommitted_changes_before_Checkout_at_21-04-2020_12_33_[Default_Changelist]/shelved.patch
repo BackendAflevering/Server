@@ -1,0 +1,107 @@
+Index: src/main/java/controller/Rest_controller.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package controller;\r\n\r\nimport datalayer.Projekt;\r\nimport datalayer.Studerende;\r\nimport io.javalin.Javalin;\r\nimport io.javalin.http.Context;\r\nimport logik.Login;\r\nimport org.jetbrains.annotations.NotNull;\r\n\r\nimport java.net.MalformedURLException;\r\n\r\n\r\npublic class Rest_controller {\r\n   public static Javalin server;\r\n   public static Login login;\r\n\r\n   public void stop(){\r\n       server.stop();\r\n       server = null;\r\n   }\r\n\r\n   public void start() throws Exception{\r\n       if (server!=null) return;\r\n\r\n       server = Javalin.create().start(4548);\r\n       server.exception(Exception.class, (e,ctx)-> {e.printStackTrace();});\r\n       //TODO: lav endpoints (GET og POST)\r\n       server.get(\"/login\",ctx -> login(ctx));\r\n       server.get(\"/studerende\",ctx -> getStuderende(ctx));\r\n       server.get(\"/projekt\",ctx -> getProjekt(ctx));\r\n       server.post(\"/nystuderende\",ctx -> nyStuderende(ctx));\r\n       server.post(\"/nytprojekt\",ctx -> projekt(ctx));\r\n\r\n   }\r\n\r\n   private static void login(@NotNull Context ctx) throws MalformedURLException {\r\n       String brugernavn = ctx.queryParam(\"brugernavn\");\r\n       String kodeord = ctx.queryParam(\"kodeord\");\r\n       if (brugernavn==null || kodeord == null) {\r\n           ctx.contentType(\"text/html; charset=utf-8\").result(\"<html><body><form method=get>Skriv dit fornavn: <input name=brugernavn type=text></form></html>\");\r\n           ctx.contentType(\"text/html; charset=utf-8\").result(\"<html><body><form method=get>Skriv dit fornavn: <input name=kodeord type=text></form></html>\");\r\n       } else {\r\n           login.tjekLogin(brugernavn,kodeord);\r\n       }\r\n    }\r\n\r\n    private static void nyStuderende(@NotNull Context ctx) {\r\n       Studerende studerende = ctx.bodyAsClass(Studerende.class);\r\n    }\r\n\r\n    private static void projekt(@NotNull Context ctx){\r\n       Projekt projekt = ctx.bodyAsClass(Projekt.class);\r\n    }\r\n\r\n    private static void getStuderende(@NotNull Context ctx){\r\n\r\n    }\r\n    private static void getProjekt(@NotNull Context ctx){\r\n\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- src/main/java/controller/Rest_controller.java	(revision 30fea201c86eb8b46689c3283cc6c448ac50b35c)
++++ src/main/java/controller/Rest_controller.java	(date 1587459072049)
+@@ -49,6 +49,7 @@
+     }
+ 
+     private static void projekt(@NotNull Context ctx){
++
+        Projekt projekt = ctx.bodyAsClass(Projekt.class);
+     }
+ 
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"BranchesTreeState\">\r\n    <expand>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"LOCAL_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n      <path>\r\n        <item name=\"ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"REMOTE_ROOT\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n        <item name=\"GROUP_NODE:origin\" type=\"e8cecc67:BranchNodeDescriptor\" />\r\n      </path>\r\n    </expand>\r\n    <select />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"99718a6f-3a39-4950-aa36-d984efa549f9\" name=\"Default Changelist\" comment=\"har lavet nytprojekt og nystuderende handlers i controlleren.\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/datalayer/Firebase.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/pom.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/pom.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/controller/Rest_controller.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/controller/Rest_controller.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/datalayer/Projekt.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/datalayer/Projekt.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/datalayer/Studerende.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/datalayer/Studerende.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"ProjectId\" id=\"1aWTZqRGjU77knsq1m6WHPlJ3O4\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">\r\n    <property name=\"RunOnceActivity.OpenProjectViewOnStart\" value=\"true\" />\r\n    <property name=\"RunOnceActivity.ShowReadmeOnStart\" value=\"true\" />\r\n    <property name=\"SHARE_PROJECT_CONFIGURATION_FILES\" value=\"true\" />\r\n    <property name=\"WebServerToolWindowFactoryState\" value=\"false\" />\r\n    <property name=\"aspect.path.notification.shown\" value=\"true\" />\r\n    <property name=\"last_opened_file_path\" value=\"$USER_HOME$/Desktop/Galgeleg\" />\r\n    <property name=\"project.structure.last.edited\" value=\"SDKs\" />\r\n    <property name=\"project.structure.proportion\" value=\"0.0\" />\r\n    <property name=\"project.structure.side.proportion\" value=\"0.0\" />\r\n  </component>\r\n  <component name=\"SvnConfiguration\">\r\n    <configuration />\r\n  </component>\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"99718a6f-3a39-4950-aa36-d984efa549f9\" name=\"Default Changelist\" comment=\"\" />\r\n      <created>1586850408899</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1586850408899</updated>\r\n      <workItem from=\"1586850413383\" duration=\"9751000\" />\r\n      <workItem from=\"1586935640676\" duration=\"674000\" />\r\n      <workItem from=\"1586936326542\" duration=\"3371000\" />\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"har lavet nytprojekt og nystuderende handlers i controlleren.\">\r\n      <created>1586856964899</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1586856964899</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"2\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"2\" />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n    <option name=\"oldMeFiltersMigrated\" value=\"true\" />\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"har lavet nytprojekt og nystuderende handlers i controlleren.\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"har lavet nytprojekt og nystuderende handlers i controlleren.\" />\r\n  </component>\r\n  <component name=\"WindowStateProjectService\">\r\n    <state x=\"728\" y=\"221\" key=\"#com.intellij.ide.util.MemberChooser\" timestamp=\"1586857568845\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"728\" y=\"221\" key=\"#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040\" timestamp=\"1586857568845\" />\r\n    <state x=\"740\" y=\"275\" key=\"FileChooserDialogImpl\" timestamp=\"1586853023415\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"740\" y=\"275\" key=\"FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040\" timestamp=\"1586853023415\" />\r\n    <state x=\"440\" y=\"94\" key=\"SettingsEditor\" timestamp=\"1586850770069\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"440\" y=\"94\" key=\"SettingsEditor/0.0.1920.1040@0.0.1920.1040\" timestamp=\"1586850770069\" />\r\n    <state x=\"552\" y=\"240\" key=\"Vcs.Push.Dialog.v2\" timestamp=\"1586856967937\">\r\n      <screen x=\"0\" y=\"0\" width=\"1920\" height=\"1040\" />\r\n    </state>\r\n    <state x=\"552\" y=\"240\" key=\"Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040\" timestamp=\"1586856967937\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/workspace.xml	(revision 30fea201c86eb8b46689c3283cc6c448ac50b35c)
++++ .idea/workspace.xml	(date 1587465186852)
+@@ -20,12 +20,8 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="99718a6f-3a39-4950-aa36-d984efa549f9" name="Default Changelist" comment="har lavet nytprojekt og nystuderende handlers i controlleren.">
+-      <change afterPath="$PROJECT_DIR$/src/main/java/datalayer/Firebase.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/main/java/controller/Rest_controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Rest_controller.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/datalayer/Projekt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datalayer/Projekt.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/datalayer/Studerende.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datalayer/Studerende.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -53,10 +49,11 @@
+     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+     <property name="WebServerToolWindowFactoryState" value="false" />
+     <property name="aspect.path.notification.shown" value="true" />
+-    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Galgeleg" />
++    <property name="last_opened_file_path" value="$PROJECT_DIR$/../distribuerede-systemer" />
+     <property name="project.structure.last.edited" value="SDKs" />
+     <property name="project.structure.proportion" value="0.0" />
+     <property name="project.structure.side.proportion" value="0.0" />
++    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+   </component>
+   <component name="SvnConfiguration">
+     <configuration />
+@@ -71,6 +68,9 @@
+       <workItem from="1586850413383" duration="9751000" />
+       <workItem from="1586935640676" duration="674000" />
+       <workItem from="1586936326542" duration="3371000" />
++      <workItem from="1587378913494" duration="784000" />
++      <workItem from="1587380900777" duration="1381000" />
++      <workItem from="1587454322763" duration="3947000" />
+     </task>
+     <task id="LOCAL-00001" summary="har lavet nytprojekt og nystuderende handlers i controlleren.">
+       <created>1586856964899</created>
+@@ -79,7 +79,14 @@
+       <option name="project" value="LOCAL" />
+       <updated>1586856964899</updated>
+     </task>
+-    <option name="localTasksCounter" value="2" />
++    <task id="LOCAL-00002" summary="har lavet nytprojekt og nystuderende handlers i controlleren.">
++      <created>1587379078983</created>
++      <option name="number" value="00002" />
++      <option name="presentableId" value="LOCAL-00002" />
++      <option name="project" value="LOCAL" />
++      <updated>1587379078983</updated>
++    </task>
++    <option name="localTasksCounter" value="3" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+@@ -106,17 +113,21 @@
+       <screen x="0" y="0" width="1920" height="1040" />
+     </state>
+     <state x="728" y="221" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1586857568845" />
+-    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1586853023415">
++    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1587459069091">
++      <screen x="0" y="0" width="1920" height="1040" />
++    </state>
++    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587459069091" />
++    <state x="440" y="94" key="SettingsEditor" timestamp="1587463305231">
+       <screen x="0" y="0" width="1920" height="1040" />
+     </state>
+-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1586853023415" />
+-    <state x="440" y="94" key="SettingsEditor" timestamp="1586850770069">
++    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1587463305231" />
++    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1587379080508">
+       <screen x="0" y="0" width="1920" height="1040" />
+     </state>
+-    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1586850770069" />
+-    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1586856967937">
++    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1587379080508" />
++    <state x="658" y="462" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587454326939">
+       <screen x="0" y="0" width="1920" height="1040" />
+     </state>
+-    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1586856967937" />
++    <state x="658" y="462" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1587454326939" />
+   </component>
+ </project>
+\ No newline at end of file

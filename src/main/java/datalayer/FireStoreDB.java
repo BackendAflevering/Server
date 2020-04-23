@@ -12,19 +12,22 @@ import com.google.firebase.cloud.FirestoreClient;
 
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.ExecutionException;
 
 public class FireStoreDB {
 
     public static void main(String[] args) throws IOException, ExecutionException, InterruptedException {
         FireStoreDB run = new FireStoreDB();
-        Firestore db;
-        db = run.initializeConnection();
-        run.get(db,"1");
-    }
+        Firestore db = run.initializeConnection();
 
+        List<String> medlemmer = new ArrayList<String>();
+        medlemmer.add("jenje");
+        medlemmer.add("Mark");
+        
+        Projekt projekt = new Projekt("fedt",0,0,medlemmer);
+        run.addProjekt(projekt,db);
+    }
     public Firestore initializeConnection() throws IOException {
         System.out.println("Working Directory = " + System.getProperty("user.dir"));
         String path = System.getProperty("user.dir")+"/src/main/java/ServiceAccountKey.json"; //sets key to current dir
@@ -44,33 +47,30 @@ public class FireStoreDB {
         return db;
     }
 
-    public void addProjektToDB(Projekt projekt,Firestore db) throws ExecutionException, InterruptedException {
+    public void addProjekt(Projekt projekt,Firestore db) throws ExecutionException, InterruptedException {
         Map<String,Object> docData = new HashMap<>();
 
-        docData.put("projektID",projekt.getProjektID()); // user.getID
         docData.put("projektnavn",projekt.getProjektnavn()); // user.getFirstName
         docData.put("projekttid",projekt.getProjekttid()); // user.getLastName
-        docData.put("medlemmer",projekt.getMedlemmer()); // user.getLastName
-
+        docData.put("medlemmer", Arrays.asList(projekt.getMedlemmer())); // user.getLastName
 
         // Add a new document (asynchronously) in collection "cities" with id "LA"
-        ApiFuture<WriteResult> future = db.collection("Projects").document("xEtPzeySvbMedc1q681I").set(docData);
+        ApiFuture<WriteResult> future = db.collection("Projects").document(projekt.getProjektnavn()).set(docData);
 
-        System.out.println("Database was updated at time : "+ future.get().getUpdateTime());
+        //System.out.println("Database was updated at time : "+ future.get().getUpdateTime());
     }
 
-    public void update(Firestore db,Projekt projekt) throws ExecutionException, InterruptedException {
+    public void updateProjekt(Firestore db,Projekt projekt) throws ExecutionException, InterruptedException {
         Map<String,Object> docData = new HashMap<>();
         DocumentReference ProjektRef = db.collection("Projects").document("projektID");
 
-        docData.put("projektID",projekt.getProjektID()); // user.getID
         docData.put("projektnavn",projekt.getProjektnavn()); // user.getFirstName
         docData.put("projekttid",projekt.getProjekttid()); // user.getLastName
         docData.put("medlemmer",projekt.getMedlemmer()); // user.getLastName
 
     }
 
-    public DocumentSnapshot get(Firestore db, String projektID) throws ExecutionException, InterruptedException {
+    public DocumentSnapshot getProjekt(Firestore db, String projektID) throws ExecutionException, InterruptedException {
         DocumentReference docRef = db.collection("Projects").document(projektID);
         // asynchronously retrieve the document
         ApiFuture<DocumentSnapshot> future = docRef.get();
@@ -86,5 +86,20 @@ public class FireStoreDB {
         return null;
     }
 
+    public void addStuderende(Studerende studerende, Firestore db) throws ExecutionException, InterruptedException{
+        Map<String,Object> docData = new HashMap<>();
 
+        docData.put("brugernavn",studerende.getBrugernavn());
+        docData.put("gruppe",studerende.getGruppe());
+        docData.put("gruppeleder",studerende.isGruppeleder());
+        docData.put("ugetid",studerende.getUgetid());
+        docData.put("projekter",studerende.getProjekter());
+        db.collection("Studerende").add(docData);
+        //ApiFuture<WriteResult> future = db.collection("Studerende").document(studerende.getBrugernavn()).set(docData);
+
+        //System.out.println("Database was updated at time : "+ future.get().getUpdateTime());
+    }
+    public void updateStuderende(Studerende studerende, Firestore db) throws ExecutionException, InterruptedException{
+
+    }
 }

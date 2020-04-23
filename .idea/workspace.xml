@@ -19,162 +19,19 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99718a6f-3a39-4950-aa36-d984efa549f9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/datalayer/FireStoreDB.java" afterDir="false" />
+    <list default="true" id="99718a6f-3a39-4950-aa36-d984efa549f9" name="Default Changelist" comment="har lavet nytprojekt og nystuderende handlers i controlleren.">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/FireBaseTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/Rest_controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Rest_controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/datalayer/FireStoreDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datalayer/FireStoreDB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/datalayer/Firebase.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/datalayer/Projekt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datalayer/Projekt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logik/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logik/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/datalayer/Studerende.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datalayer/Studerende.java" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/target/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="-37071477">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.2" value="1" />
-          <entry key="project.open.time.5" value="1" />
-          <entry key="project.opened" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="java" value="11" />
-          <entry key="json" value="1" />
-          <entry key="xml" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="JAVA" value="11" />
-          <entry key="JSON" value="1" />
-          <entry key="XML" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="dummy" value="11" />
-          <entry key="java" value="2680" />
-          <entry key="txt" value="55" />
-          <entry key="xml" value="14" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="2680" />
-          <entry key="PLAIN_TEXT" value="66" />
-          <entry key="XML" value="14" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.vcs.git.usages">
-        <counts>
-          <entry key="git.branch.create.new" value="1" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/controller/Rest_controller.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="41" column="43" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/logik/Login.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/datalayer/FireStoreDB.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="127">
-              <caret line="27" column="43" lean-forward="true" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/datalayer/Projekt.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="55">
-              <caret line="53" column="40" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="40" />
-              <folding>
-                <element signature="e#315#316#0" expanded="true" />
-                <element signature="e#354#355#0" expanded="true" />
-                <element signature="e#423#424#0" expanded="true" />
-                <element signature="e#482#483#0" expanded="true" />
-                <element signature="e#515#516#0" expanded="true" />
-                <element signature="e#547#548#0" expanded="true" />
-                <element signature="e#594#595#0" expanded="true" />
-                <element signature="e#636#637#0" expanded="true" />
-                <element signature="e#674#675#0" expanded="true" />
-                <element signature="e#708#709#0" expanded="true" />
-                <element signature="e#762#763#0" expanded="true" />
-                <element signature="e#808#809#0" expanded="true" />
-                <element signature="e#839#840#0" expanded="true" />
-                <element signature="e#868#869#0" expanded="true" />
-                <element signature="e#910#911#0" expanded="true" />
-                <element signature="e#946#947#0" expanded="true" />
-                <element signature="e#981#982#0" expanded="true" />
-                <element signature="e#1014#1015#0" expanded="true" />
-                <element signature="e#1064#1065#0" expanded="true" />
-                <element signature="e#1108#1109#0" expanded="true" />
-                <element signature="e#1182#1183#0" expanded="true" />
-                <element signature="e#1238#1239#0" expanded="true" />
-                <element signature="e#1280#1281#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/datalayer/Studerende.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ServiceAccountKey.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="411">
-              <caret line="40" selection-start-line="40" selection-end-line="40" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -198,95 +55,7 @@
       </map>
     </option>
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/main/java/FireBaseTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/datalayer/Projekt.java" />
-        <option value="$PROJECT_DIR$/src/main/java/datalayer/FireBaseTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/datalayer/FireStore.java" />
-        <option value="$PROJECT_DIR$/src/main/java/logik/Login.java" />
-        <option value="$PROJECT_DIR$/src/main/java/datalayer/FireStoreDB.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/controller/Rest_controller.java" />
-      </list>
-    </option>
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1138" />
-    <option name="width" value="1429" />
-    <option name="height" value="1398" />
-  </component>
   <component name="ProjectId" id="1aWTZqRGjU77knsq1m6WHPlJ3O4" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="datalayer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
-  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -299,9 +68,9 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587459947020" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Galgeleg" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
@@ -312,19 +81,7 @@
       <recent name="C:\Users\Mark\IdeaProjects\Server\src" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Application.Rest_controller">
+  <component name="RunManager" selected="Application.FireStoreDB">
     <configuration name="FireStoreDB" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="datalayer.FireStoreDB" />
       <module name="Server" />
@@ -351,8 +108,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Rest_controller" />
         <item itemvalue="Application.FireStoreDB" />
+        <item itemvalue="Application.Rest_controller" />
       </list>
     </recent_temporary>
   </component>
@@ -369,6 +126,8 @@
       <workItem from="1586850413383" duration="9751000" />
       <workItem from="1586935640676" duration="674000" />
       <workItem from="1586936326542" duration="3371000" />
+      <workItem from="1587535880923" duration="11826000" />
+      <workItem from="1587640850568" duration="739000" />
     </task>
     <task id="LOCAL-00001" summary="har lavet nytprojekt og nystuderende handlers i controlleren.">
       <created>1586856964899</created>
@@ -394,43 +153,6 @@
     <option name="localTasksCounter" value="4" />
     <servers />
   </component>
-  <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="2062" height="1126" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15134865" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Image Layers" order="3" />
-      <window_info id="Favorites" order="4" side_tool="true" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="UI Designer" order="6" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.4451158" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997986" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.22155085" />
-      <window_info anchor="bottom" id="Flutter Performance" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" order="11" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Flutter Inspector" order="4" />
-      <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="LuaJ" order="6" />
-      <window_info anchor="right" id="Flutter Outline" order="7" />
-      <window_info anchor="right" id="Maven Projects" order="8" />
-      <window_info anchor="right" id="Palette&#9;" order="9" />
-      <window_info anchor="right" id="Theme Preview" order="10" />
-      <window_info anchor="right" id="RestServices" order="11" />
-    </layout>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
@@ -439,21 +161,12 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="har lavet nytprojekt og nystuderende handlers i controlleren." />
@@ -462,113 +175,47 @@
     <option name="LAST_COMMIT_MESSAGE" value="now dynamic key path" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="728" y="221" key="#com.intellij.ide.util.MemberChooser" />
-    <state x="728" y="221" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" />
-    <state x="740" y="275" key="FileChooserDialogImpl" />
-    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" />
-    <state x="440" y="94" key="SettingsEditor" />
-    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" />
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/brugerautorisation/transport/soap/Brugeradmin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="49" column="112" selection-start-line="49" selection-start-column="112" selection-end-line="49" selection-end-column="112" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/brugerautorisation/data/Bruger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ServiceAccountKey.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/server/Server_main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/datalayer/Studerende.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/datalayer/Projekt.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="55">
-          <caret line="53" column="40" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="40" />
-          <folding>
-            <element signature="e#315#316#0" expanded="true" />
-            <element signature="e#354#355#0" expanded="true" />
-            <element signature="e#423#424#0" expanded="true" />
-            <element signature="e#482#483#0" expanded="true" />
-            <element signature="e#515#516#0" expanded="true" />
-            <element signature="e#547#548#0" expanded="true" />
-            <element signature="e#594#595#0" expanded="true" />
-            <element signature="e#636#637#0" expanded="true" />
-            <element signature="e#674#675#0" expanded="true" />
-            <element signature="e#708#709#0" expanded="true" />
-            <element signature="e#762#763#0" expanded="true" />
-            <element signature="e#808#809#0" expanded="true" />
-            <element signature="e#839#840#0" expanded="true" />
-            <element signature="e#868#869#0" expanded="true" />
-            <element signature="e#910#911#0" expanded="true" />
-            <element signature="e#946#947#0" expanded="true" />
-            <element signature="e#981#982#0" expanded="true" />
-            <element signature="e#1014#1015#0" expanded="true" />
-            <element signature="e#1064#1065#0" expanded="true" />
-            <element signature="e#1108#1109#0" expanded="true" />
-            <element signature="e#1182#1183#0" expanded="true" />
-            <element signature="e#1238#1239#0" expanded="true" />
-            <element signature="e#1280#1281#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="411">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/logik/Login.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/datalayer/FireStoreDB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="27" column="43" lean-forward="true" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controller/Rest_controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="41" column="43" selection-start-line="41" selection-start-column="43" selection-end-line="41" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
+    <state x="436" y="97" key="#Project_Structure" timestamp="1587535969014">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="436" y="97" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1587535969014" />
+    <state x="728" y="221" key="#com.intellij.ide.util.MemberChooser" timestamp="1587559161527">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="728" y="221" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1587559161527" />
+    <state x="1170" y="270" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1587582910857">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1170" y="270" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587582910857" />
+    <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1587465268073" />
+    <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587465268073" />
+    <state width="1877" height="260" key="GridCell.Tab.0.bottom" timestamp="1587587430080">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="260" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587587430080" />
+    <state width="1877" height="260" key="GridCell.Tab.0.center" timestamp="1587587430080">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="260" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587587430080" />
+    <state width="1877" height="260" key="GridCell.Tab.0.left" timestamp="1587587430080">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="260" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587587430080" />
+    <state width="1877" height="260" key="GridCell.Tab.0.right" timestamp="1587587430080">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="260" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587587430080" />
+    <state x="440" y="94" key="SettingsEditor" timestamp="1587465268073" />
+    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1587465268073" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1587465268073" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1587465268073" />
+    <state x="765" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587477251825">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="765" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1587477251825" />
+    <state x="1103" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1587583701019">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1103" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1587583701019" />
   </component>
 </project>

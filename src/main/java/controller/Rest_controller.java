@@ -12,7 +12,6 @@ import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.util.Scanner;
 import java.util.concurrent.ExecutionException;
 
 
@@ -43,10 +42,10 @@ public class Rest_controller {
        server.exception(Exception.class, (e,ctx)-> {e.printStackTrace();});
        //TODO: lav endpoints (GET og POST)
        server.get("/login",ctx -> login(ctx));
-       server.get("/studerende",ctx -> getStuderende(ctx));
-       server.get("/getProjekt",ctx -> getProjekt(ctx));
+       server.get("/getStuderende",ctx -> getStuderende(ctx));
+       server.get("/getProjekter",ctx -> getProjekter(ctx));
        server.post("/nystuderende",ctx -> nyStuderende(ctx));
-       server.post("/nytprojekt",ctx -> projekt(ctx));
+       server.post("/nytprojekt",ctx -> nytprojekt(ctx));
 
    }
 
@@ -71,23 +70,26 @@ public class Rest_controller {
 
     private static void nyStuderende(@NotNull Context ctx) {
        Studerende studerende = ctx.bodyAsClass(Studerende.class);
+
     }
 
-    private static void getProjekt(@NotNull Context ctx) throws IOException, ExecutionException, InterruptedException {
+    private static void getProjekter(@NotNull Context ctx) throws IOException, ExecutionException, InterruptedException {
         String id = ctx.queryParam("projektID");
-        System.out.println("Vi finder projektet til ID: "+id);
         DocumentSnapshot doc;
-
-        doc = run.get(db,id);
-
+        doc = run.getProjekt(db,id);
         ctx.json(doc.getData());
-
     }
 
-    private static void getStuderende(@NotNull Context ctx){
-
+    private static void getStuderende(@NotNull Context ctx) throws ExecutionException, InterruptedException {
+        String brugernavn = ctx.queryParam("brugernavn");
+        DocumentSnapshot doc;
+        doc = run.getProjekt(db,brugernavn);
+        ctx.json(doc.getData());
     }
-    private static void projekt(@NotNull Context ctx){
 
+    private static void nytprojekt(@NotNull Context ctx) throws ExecutionException, InterruptedException {
+    Projekt projekt = ctx.bodyAsClass(Projekt.class);
+    run.addProjekt(projekt,db);
+    ctx.json(projekt);
     }
 }
