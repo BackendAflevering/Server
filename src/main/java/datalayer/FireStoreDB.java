@@ -29,10 +29,10 @@ public class FireStoreDB {
         run.addProjekt(projekt,db);
     }
     public Firestore initializeConnection() throws IOException {
-        System.out.println("Working Directory = " + System.getProperty("user.dir"));
-        String path = System.getProperty("user.dir")+"/src/main/java/ServiceAccountKey.json"; //sets key to current dir
+        //System.out.println("Working Directory = " + System.getProperty("user.dir"));
+        //String path = System.getProperty("user.dir")+"/src/main/java/ServiceAccountKey.json"; //sets key to current dir
 
-        FileInputStream serviceAccount = new FileInputStream(path);
+        FileInputStream serviceAccount = new FileInputStream("./ServiceAccountKey.json");
 
         FirebaseOptions options = new FirebaseOptions.Builder()
                 .setCredentials(GoogleCredentials.fromStream(serviceAccount))
