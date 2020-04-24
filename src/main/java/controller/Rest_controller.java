@@ -21,15 +21,6 @@ public class Rest_controller {
     static FireStoreDB run;
     static Firestore db;
 
-    public static void main(String[] args) throws Exception {
-        run = new FireStoreDB();
-        db = run.initializeConnection();
-
-        Rest_controller server = new Rest_controller();
-        server.start();
-
-    }
-
    public void stop(){
        server.stop();
        server = null;

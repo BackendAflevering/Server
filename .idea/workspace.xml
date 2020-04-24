@@ -19,14 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99718a6f-3a39-4950-aa36-d984efa549f9" name="Default Changelist" comment="har lavet nytprojekt og nystuderende handlers i controlleren.">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="99718a6f-3a39-4950-aa36-d984efa549f9" name="Default Changelist" comment="Lavet lidt om i firestordb og i studerende og i projekt.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controller/Rest_controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Rest_controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/datalayer/FireStoreDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datalayer/FireStoreDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/datalayer/Firebase.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/datalayer/Projekt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datalayer/Projekt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/datalayer/Studerende.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datalayer/Studerende.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/server/Server_main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/server/Server_main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,9 +64,10 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587459947020" />
     <property name="last_opened_file_path" value="$USER_HOME$/Desktop/Galgeleg" />
-    <property name="project.structure.last.edited" value="Project" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
@@ -127,7 +124,9 @@
       <workItem from="1586935640676" duration="674000" />
       <workItem from="1586936326542" duration="3371000" />
       <workItem from="1587535880923" duration="11826000" />
-      <workItem from="1587640850568" duration="739000" />
+      <workItem from="1587640850568" duration="2599000" />
+      <workItem from="1587665910685" duration="1754000" />
+      <workItem from="1587713931129" duration="842000" />
     </task>
     <task id="LOCAL-00001" summary="har lavet nytprojekt og nystuderende handlers i controlleren.">
       <created>1586856964899</created>
@@ -150,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587383523145</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Lavet lidt om i firestordb og i studerende og i projekt.">
+      <created>1587646124589</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1587646124589</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,7 +178,8 @@
     <MESSAGE value="har lavet nytprojekt og nystuderende handlers i controlleren." />
     <MESSAGE value="Kan nu skrive data til firestore" />
     <MESSAGE value="now dynamic key path" />
-    <option name="LAST_COMMIT_MESSAGE" value="now dynamic key path" />
+    <MESSAGE value="Lavet lidt om i firestordb og i studerende og i projekt." />
+    <option name="LAST_COMMIT_MESSAGE" value="Lavet lidt om i firestordb og i studerende og i projekt." />
   </component>
   <component name="WindowStateProjectService">
     <state x="436" y="97" key="#Project_Structure" timestamp="1587535969014">
@@ -183,36 +190,42 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="728" y="221" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1587559161527" />
+    <state x="690" y="310" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1587714740990">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="310" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587714740990" />
     <state x="1170" y="270" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1587582910857">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1170" y="270" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587582910857" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1587465268073" />
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587465268073" />
-    <state width="1877" height="260" key="GridCell.Tab.0.bottom" timestamp="1587587430080">
+    <state width="1877" height="260" key="GridCell.Tab.0.bottom" timestamp="1587668755666">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="260" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587587430080" />
-    <state width="1877" height="260" key="GridCell.Tab.0.center" timestamp="1587587430080">
+    <state width="1877" height="260" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1587668755666" />
+    <state width="1877" height="260" key="GridCell.Tab.0.center" timestamp="1587668755666">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="260" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587587430080" />
-    <state width="1877" height="260" key="GridCell.Tab.0.left" timestamp="1587587430080">
+    <state width="1877" height="260" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1587668755666" />
+    <state width="1877" height="260" key="GridCell.Tab.0.left" timestamp="1587668755666">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="260" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587587430080" />
-    <state width="1877" height="260" key="GridCell.Tab.0.right" timestamp="1587587430080">
+    <state width="1877" height="260" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1587668755666" />
+    <state width="1877" height="260" key="GridCell.Tab.0.right" timestamp="1587668755666">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="260" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587587430080" />
-    <state x="440" y="94" key="SettingsEditor" timestamp="1587465268073" />
-    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1587465268073" />
+    <state width="1877" height="260" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1587668755666" />
+    <state x="440" y="94" key="SettingsEditor" timestamp="1587714773916">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1587714773916" />
     <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1587465268073" />
     <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1587465268073" />
-    <state x="765" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587477251825">
+    <state x="765" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1587666833797">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1587477251825" />
+    <state x="765" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1587666833797" />
     <state x="1103" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1587583701019">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
