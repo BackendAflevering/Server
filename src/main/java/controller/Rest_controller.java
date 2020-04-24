@@ -14,12 +14,11 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.concurrent.ExecutionException;
 
-
 public class Rest_controller {
    public static Javalin server;
    public static Login login;
-    static FireStoreDB run;
-    static Firestore db;
+   static FireStoreDB run;
+   static Firestore db;
 
    public void stop(){
        server.stop();
@@ -31,7 +30,7 @@ public class Rest_controller {
        db = run.initializeConnection();
        if (server!=null) return;
 
-       server = Javalin.create().start(8097);
+       server = Javalin.create().start("ec2-13-48-130-164.eu-north-1.compute.amazonaws.com",80);
        server.exception(Exception.class, (e,ctx)-> {e.printStackTrace();});
        //TODO: lav endpoints (GET og POST)
        server.get("/login",ctx -> login(ctx));
@@ -39,7 +38,6 @@ public class Rest_controller {
        server.get("/getProjekter",ctx -> getProjekter(ctx));
        server.post("/nystuderende",ctx -> nyStuderende(ctx));
        server.post("/nytprojekt",ctx -> nytprojekt(ctx));
-
    }
 
    private static void login(@NotNull Context ctx) throws MalformedURLException {
@@ -76,19 +74,18 @@ public class Rest_controller {
     private static void getStuderende(@NotNull Context ctx) throws ExecutionException, InterruptedException {
         String brugernavn = ctx.queryParam("brugernavn");
         DocumentSnapshot doc;
-        doc = run.getProjekt(db,brugernavn);
+        doc = run.getStuderende(db,brugernavn);
         ctx.json(doc.getData());
     }
 
     private static void nytprojekt(@NotNull Context ctx) throws ExecutionException, InterruptedException {
        String projektnavn = ctx.queryParam("projektnavn");
        String tid = ctx.queryParam("projekttid");
-       int projekttid = Integer.valueOf(tid);
+       int projekttid = Integer.parseInt(tid);
 
         System.out.println("Skal til at skabe et nyt projekt");
         System.out.println(ctx.body());
         Projekt projekt = new Projekt(projektnavn,projekttid);
         run.addProjekt(projekt,db);
-        ctx.json(projekt);
     }
 }

@@ -17,17 +17,6 @@ import java.util.concurrent.ExecutionException;
 
 public class FireStoreDB {
 
-    public static void main(String[] args) throws IOException, ExecutionException, InterruptedException {
-        FireStoreDB run = new FireStoreDB();
-        Firestore db = run.initializeConnection();
-
-        List<String> medlemmer = new ArrayList<String>();
-        medlemmer.add("jenje");
-        medlemmer.add("Mark");
-        
-        Projekt projekt = new Projekt("fedt",0);
-        run.addProjekt(projekt,db);
-    }
     public Firestore initializeConnection() throws IOException {
         //System.out.println("Working Directory = " + System.getProperty("user.dir"));
         //String path = System.getProperty("user.dir")+"/src/main/java/ServiceAccountKey.json"; //sets key to current dir
@@ -87,5 +76,20 @@ public class FireStoreDB {
     }
     public void updateStuderende(Studerende studerende, Firestore db) throws ExecutionException, InterruptedException{
 
+    }
+
+    public DocumentSnapshot getStuderende(Firestore db, String brugernavn) throws ExecutionException, InterruptedException{
+        DocumentReference docRef = db.collection("Studerende").document(brugernavn);
+
+        ApiFuture<DocumentSnapshot> future = docRef.get();
+
+        DocumentSnapshot document = future.get();
+        if (document.exists()){
+            System.out.println("Document data: " + document.getData());
+            return document;
+        } else {
+            System.out.println("No such Document");
+        }
+        return null;
     }
 }
