@@ -13,7 +13,13 @@ public class Server_main {
         db = run.initializeConnection();
 
         Rest_controller server = new Rest_controller();
-        server.start();
+        try{
+            server.start();
+        } catch(Exception e){
+            System.out.println("Exception triggered: "+e);
+            System.out.println("Stopping server.... cya :D");
+            server.stop();
+        }
 
     }
 }

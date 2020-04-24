@@ -48,7 +48,6 @@ public class FireStoreDB {
     }
 
     public void addProjekt(Projekt projekt,Firestore db) throws ExecutionException, InterruptedException {
-
         ApiFuture<WriteResult> future = db.collection("Projects").document(projekt.getProjektnavn()).set(projekt);
 
         System.out.println("Database was updated at time : "+ future.get().getUpdateTime());
