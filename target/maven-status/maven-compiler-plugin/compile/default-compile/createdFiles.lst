@@ -1,0 +1,9 @@
+server/Server_main.class
+brugerautorisation/data/Bruger.class
+datalayer/Studerende.class
+logik/Login.class
+klient/Klient_main.class
+controller/Rest_controller.class
+brugerautorisation/transport/soap/Brugeradmin.class
+datalayer/FireStoreDB.class
+datalayer/Projekt.class
