@@ -25,7 +25,7 @@ public class FireStoreDB {
         medlemmer.add("jenje");
         medlemmer.add("Mark");
         
-        Projekt projekt = new Projekt("fedt",0,0,medlemmer);
+        Projekt projekt = new Projekt("fedt",0);
         run.addProjekt(projekt,db);
     }
     public Firestore initializeConnection() throws IOException {
@@ -59,7 +59,7 @@ public class FireStoreDB {
 
         docData.put("projektnavn",projekt.getProjektnavn()); // user.getFirstName
         docData.put("projekttid",projekt.getProjekttid()); // user.getLastName
-        docData.put("medlemmer",projekt.getMedlemmer()); // user.getLastName
+        //docData.put("medlemmer",projekt.getMedlemmer()); // user.getLastName
 
     }
 

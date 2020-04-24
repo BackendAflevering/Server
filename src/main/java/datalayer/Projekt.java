@@ -7,9 +7,8 @@ public class Projekt {
     private static long serialVersionUID = 54321;
 
     private String projektnavn;
-    private long ugetid;
     private long projekttid;
-    private List<String> medlemmer;
+    //private List<String> medlemmer;
 
     public static long getSerialVersionUID() {
         return serialVersionUID;
@@ -27,13 +26,7 @@ public class Projekt {
         this.projektnavn = projektnavn;
     }
 
-    public long getUgetid() {
-        return ugetid;
-    }
 
-    public void setUgetid(long ugetid) {
-        this.ugetid = ugetid;
-    }
 
     public long getProjekttid() {
         return projekttid;
@@ -43,28 +36,26 @@ public class Projekt {
         this.projekttid = projekttid;
     }
 
-    public List<String> getMedlemmer() {
-        return medlemmer;
-    }
+    //public List<String> getMedlemmer() {
+       // return medlemmer;
+    //}
 
-    public void setMedlemmer(List<String> medlemmer) {
-        this.medlemmer = medlemmer;
-    }
+    //public void setMedlemmer(List<String> medlemmer) {
+    // this.medlemmer = medlemmer;
+    // }
 
-    public Projekt  (String projektnavn, long ugetid, long projekttid, List<String> medlemmer){
+    public Projekt  (String projektnavn, long projekttid){
         this.projektnavn = projektnavn;
-        this.ugetid = ugetid;
         this.projekttid = projekttid;
-        this.medlemmer = medlemmer;
+        //this.medlemmer = medlemmer;
     }
 
     @Override
     public String toString() {
         return "Projekt{" +
                 "navn='" + projektnavn + '\'' +
-                ", ugetid=" + ugetid +
                 ", projekttid=" + projekttid +
-                ", medlemmer=" + medlemmer.toString() +
+                // ", medlemmer=" + medlemmer.toString() +
                 '}';
     }
 }

@@ -9,8 +9,6 @@ public class Server_main {
    static Firestore db;
 
     public static void main(String[] args) throws Exception {
-        run = new FireStoreDB();
-        db = run.initializeConnection();
 
         Rest_controller server = new Rest_controller();
         try{

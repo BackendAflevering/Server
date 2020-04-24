@@ -27,9 +27,11 @@ public class Rest_controller {
    }
 
    public void start() throws Exception{
+       run = new FireStoreDB();
+       db = run.initializeConnection();
        if (server!=null) return;
 
-       server = Javalin.create().start(8090);
+       server = Javalin.create().start(8097);
        server.exception(Exception.class, (e,ctx)-> {e.printStackTrace();});
        //TODO: lav endpoints (GET og POST)
        server.get("/login",ctx -> login(ctx));
@@ -79,8 +81,14 @@ public class Rest_controller {
     }
 
     private static void nytprojekt(@NotNull Context ctx) throws ExecutionException, InterruptedException {
-    Projekt projekt = ctx.bodyAsClass(Projekt.class);
-    run.addProjekt(projekt,db);
-    ctx.json(projekt);
+       String projektnavn = ctx.queryParam("projektnavn");
+       String tid = ctx.queryParam("projekttid");
+       int projekttid = Integer.valueOf(tid);
+
+        System.out.println("Skal til at skabe et nyt projekt");
+        System.out.println(ctx.body());
+        Projekt projekt = new Projekt(projektnavn,projekttid);
+        run.addProjekt(projekt,db);
+        ctx.json(projekt);
     }
 }
