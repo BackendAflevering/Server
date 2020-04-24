@@ -48,16 +48,10 @@ public class FireStoreDB {
     }
 
     public void addProjekt(Projekt projekt,Firestore db) throws ExecutionException, InterruptedException {
-        Map<String,Object> docData = new HashMap<>();
 
-        docData.put("projektnavn",projekt.getProjektnavn()); // user.getFirstName
-        docData.put("projekttid",projekt.getProjekttid()); // user.getLastName
-        docData.put("medlemmer", Arrays.asList(projekt.getMedlemmer())); // user.getLastName
+        ApiFuture<WriteResult> future = db.collection("Projects").document(projekt.getProjektnavn()).set(projekt);
 
-        // Add a new document (asynchronously) in collection "cities" with id "LA"
-        ApiFuture<WriteResult> future = db.collection("Projects").document(projekt.getProjektnavn()).set(docData);
-
-        //System.out.println("Database was updated at time : "+ future.get().getUpdateTime());
+        System.out.println("Database was updated at time : "+ future.get().getUpdateTime());
     }
 
     public void updateProjekt(Firestore db,Projekt projekt) throws ExecutionException, InterruptedException {
@@ -87,17 +81,10 @@ public class FireStoreDB {
     }
 
     public void addStuderende(Studerende studerende, Firestore db) throws ExecutionException, InterruptedException{
-        Map<String,Object> docData = new HashMap<>();
 
-        docData.put("brugernavn",studerende.getBrugernavn());
-        docData.put("gruppe",studerende.getGruppe());
-        docData.put("gruppeleder",studerende.isGruppeleder());
-        docData.put("ugetid",studerende.getUgetid());
-        docData.put("projekter",studerende.getProjekter());
-        db.collection("Studerende").add(docData);
-        //ApiFuture<WriteResult> future = db.collection("Studerende").document(studerende.getBrugernavn()).set(docData);
+        ApiFuture<WriteResult> future = db.collection("Studerende").document(studerende.getBrugernavn()).set(studerende);
 
-        //System.out.println("Database was updated at time : "+ future.get().getUpdateTime());
+        System.out.println("Database was updated at time : "+ future.get().getUpdateTime());
     }
     public void updateStuderende(Studerende studerende, Firestore db) throws ExecutionException, InterruptedException{
 
