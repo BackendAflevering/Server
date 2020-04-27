@@ -2,10 +2,7 @@ package datalayer;
 
 import com.google.api.core.ApiFuture;
 import com.google.auth.oauth2.GoogleCredentials;
-import com.google.cloud.firestore.DocumentReference;
-import com.google.cloud.firestore.DocumentSnapshot;
-import com.google.cloud.firestore.Firestore;
-import com.google.cloud.firestore.WriteResult;
+import com.google.cloud.firestore.*;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.FirebaseOptions;
 import com.google.firebase.cloud.FirestoreClient;
@@ -26,7 +23,8 @@ public class FireStoreDB {
         medlemmer.add("Mark");
         
         Projekt projekt = new Projekt("fedt",0);
-        run.addProjekt(projekt,db);
+        //run.addProjekt(projekt,db);
+        run.getProjekter(db,"Mark");
     }
     public Firestore initializeConnection() throws IOException {
         //System.out.println("Working Directory = " + System.getProperty("user.dir"));
@@ -77,6 +75,23 @@ public class FireStoreDB {
             System.out.println("No such document!");
         }
         return null;
+    }
+
+    public ArrayList<String> getProjekter(Firestore db, String username) throws ExecutionException, InterruptedException {
+        ArrayList<String> documents = new ArrayList<>();
+
+        CollectionReference projectsref = db.collection("Projects");
+        // check medlemmer . equals (username)
+
+        Query searchQuery = projectsref.whereArrayContains("medlemmer",username);
+
+        ApiFuture<QuerySnapshot> querySnapshot = searchQuery.get();
+        System.out.println("Printing project documents for user "+username+": ");
+        for (DocumentSnapshot document : querySnapshot.get().getDocuments()){
+            System.out.println(document.getData().toString());
+            documents.add(document.getData().toString());
+        }
+        return documents;
     }
 
     public void addStuderende(Studerende studerende, Firestore db) throws ExecutionException, InterruptedException{

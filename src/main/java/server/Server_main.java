@@ -13,6 +13,9 @@ public class Server_main {
         Rest_controller server = new Rest_controller();
         try{
             server.start();
+            //FireStoreDB run = new FireStoreDB();
+            //Firestore db = run.initializeConnection();
+            //run.getProjekter(db,"Mark");
         } catch(Exception e){
             System.out.println("Exception triggered: "+e);
             System.out.println("Stopping server.... cya :D");
