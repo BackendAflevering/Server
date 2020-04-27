@@ -14,6 +14,7 @@ import org.jetbrains.annotations.NotNull;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.ExecutionException;
 import com.amazonaws.services.ec2.AmazonEC2;
 import com.amazonaws.services.ec2.AmazonEC2ClientBuilder;
@@ -34,7 +35,7 @@ public class Rest_controller {
        db = run.initializeConnection();
        if (server!=null) return;
 
-       server = Javalin.create().start(9001);
+       server = Javalin.create().start(8080);
        server.exception(Exception.class, (e,ctx)-> {e.printStackTrace();});
        //TODO: lav endpoints (GET og POST)
        server.get("/login",ctx -> login(ctx));
@@ -71,6 +72,7 @@ public class Rest_controller {
     }
 
     private static void getProjekter(@NotNull Context ctx) throws IOException, ExecutionException, InterruptedException {
+        System.out.println("Getting projekt");
         String id = ctx.queryParam("projektID");
         DocumentSnapshot doc;
         doc = run.getProjekt(db,id);
@@ -100,11 +102,13 @@ public class Rest_controller {
     private static void nytprojekt(@NotNull Context ctx) throws ExecutionException, InterruptedException {
        String projektnavn = ctx.queryParam("projektnavn");
        String tid = ctx.queryParam("projekttid");
+       String medlem = ctx.queryParam("medlemmer");
+       ArrayList<String> medlemmer = new ArrayList<>();
+       medlemmer.add(medlem);
        int projekttid = Integer.valueOf(tid);
-
         System.out.println("Skal til at skabe et nyt projekt");
         System.out.println(ctx.body());
-        Projekt projekt = new Projekt(projektnavn,projekttid);
+        Projekt projekt = new Projekt(projektnavn,projekttid,medlemmer);
         run.addProjekt(projekt,db);
         ctx.json(projekt);
     }

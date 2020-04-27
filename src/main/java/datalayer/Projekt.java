@@ -1,5 +1,6 @@
 package datalayer;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -8,7 +9,7 @@ public class Projekt {
 
     private String projektnavn;
     private long projekttid;
-    //private List<String> medlemmer;
+    private ArrayList<String> medlemmer;
 
     public static long getSerialVersionUID() {
         return serialVersionUID;
@@ -36,18 +37,18 @@ public class Projekt {
         this.projekttid = projekttid;
     }
 
-    //public List<String> getMedlemmer() {
-       // return medlemmer;
-    //}
+    public ArrayList<String> getMedlemmer() {
+        return medlemmer;
+    }
 
-    //public void setMedlemmer(List<String> medlemmer) {
-    // this.medlemmer = medlemmer;
-    // }
+    public void setMedlemmer(ArrayList<String> medlemmer) {
+        this.medlemmer = medlemmer;
+        }
 
-    public Projekt  (String projektnavn, long projekttid){
+    public Projekt  (String projektnavn, long projekttid, ArrayList<String> medlemmer){
         this.projektnavn = projektnavn;
         this.projekttid = projekttid;
-        //this.medlemmer = medlemmer;
+        this.medlemmer = medlemmer;
     }
 
     @Override
@@ -55,7 +56,7 @@ public class Projekt {
         return "Projekt{" +
                 "navn='" + projektnavn + '\'' +
                 ", projekttid=" + projekttid +
-                // ", medlemmer=" + medlemmer.toString() +
+                ", medlemmer=" + medlemmer.toString() +
                 '}';
     }
 }

@@ -18,13 +18,13 @@ public class FireStoreDB {
         FireStoreDB run = new FireStoreDB();
         Firestore db = run.initializeConnection();
 
-        List<String> medlemmer = new ArrayList<String>();
-        medlemmer.add("jenje");
+        ArrayList<String> medlemmer = new ArrayList<String>();
         medlemmer.add("Mark");
+        medlemmer.add("Jens");
         
-        Projekt projekt = new Projekt("fedt",0);
+        Projekt projekt = new Projekt("Projekt Sigma",4,medlemmer);
         //run.addProjekt(projekt,db);
-        run.getProjekter(db,"Mark");
+        //run.getProjekter(db,"Mark");
     }
     public Firestore initializeConnection() throws IOException {
         //System.out.println("Working Directory = " + System.getProperty("user.dir"));
