@@ -11,6 +11,14 @@ public class Projekt {
     private long projekttid;
     private ArrayList<String> medlemmer;
 
+    public Projekt(){
+    }
+    public Projekt  (String projektnavn, long projekttid, ArrayList<String> medlemmer){
+        this.projektnavn = projektnavn;
+        this.projekttid = projekttid;
+        this.medlemmer = medlemmer;
+    }
+
     public static long getSerialVersionUID() {
         return serialVersionUID;
     }
@@ -23,32 +31,12 @@ public class Projekt {
         return projektnavn;
     }
 
-    public void setProjektnavn(String projektnavn) {
-        this.projektnavn = projektnavn;
-    }
-
-
-
     public long getProjekttid() {
         return projekttid;
     }
 
-    public void setProjekttid(long projekttid) {
-        this.projekttid = projekttid;
-    }
-
     public ArrayList<String> getMedlemmer() {
         return medlemmer;
-    }
-
-    public void setMedlemmer(ArrayList<String> medlemmer) {
-        this.medlemmer = medlemmer;
-        }
-
-    public Projekt  (String projektnavn, long projekttid, ArrayList<String> medlemmer){
-        this.projektnavn = projektnavn;
-        this.projekttid = projekttid;
-        this.medlemmer = medlemmer;
     }
 
     @Override

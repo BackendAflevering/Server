@@ -6,11 +6,20 @@ import java.util.List;
 public class Studerende {
     private static final long serialVersionUID = 12345;
 
-    private final String brugernavn;
-    private final String gruppe;
-    private final long ugetid;
-    private final boolean gruppeleder;
-    private final List<String> projekter;
+    private String brugernavn;
+    private String gruppe;
+    private long ugetid;
+    private boolean gruppeleder;
+    private List<String> projekter;
+
+    public Studerende(String brugernavn, String gruppe, long ugetid, boolean gruppeleder, List<String> projekter){
+        this.brugernavn = brugernavn;
+        this.gruppe = gruppe;
+        this.ugetid = ugetid;
+        this.gruppeleder = gruppeleder;
+        this.projekter = projekter;
+    }
+    public Studerende(){}
 
     public static long getSerialVersionUID() {
         return serialVersionUID;
@@ -34,14 +43,6 @@ public class Studerende {
 
     public List<String> getProjekter() {
         return projekter;
-    }
-
-    public Studerende(String brugernavn, String gruppe, long ugetid, boolean gruppeleder, List<String> projekter){
-        this.brugernavn = brugernavn;
-        this.gruppe = gruppe;
-        this.ugetid = ugetid;
-        this.gruppeleder = gruppeleder;
-        this.projekter = projekter;
     }
 
     @Override

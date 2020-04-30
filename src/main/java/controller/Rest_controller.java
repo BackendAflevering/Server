@@ -1,6 +1,5 @@
 package controller;
 
-import com.amazonaws.services.ec2.model.*;
 import com.google.cloud.firestore.DocumentSnapshot;
 import com.google.cloud.firestore.Firestore;
 import datalayer.FireStoreDB;
@@ -14,16 +13,14 @@ import org.jetbrains.annotations.NotNull;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.ExecutionException;
-import com.amazonaws.services.ec2.AmazonEC2;
-import com.amazonaws.services.ec2.AmazonEC2ClientBuilder;
 
 public class Rest_controller {
    public static Javalin server;
    public static Login login;
     static FireStoreDB run;
     static Firestore db;
+    String url = "ec2-13-48-130-164.eu-north-1.compute.amazonaws.com";
 
    public void stop(){
        server.stop();
@@ -38,10 +35,10 @@ public class Rest_controller {
        server = Javalin.create().start(8080);
        server.exception(Exception.class, (e,ctx)-> {e.printStackTrace();});
        //TODO: lav endpoints (GET og POST)
-       server.get("/login",ctx -> login(ctx));
+       server.post("/login",ctx -> login(ctx));
        server.get("/getStuderende",ctx -> getStuderende(ctx));
-       server.get("/getProjekter",ctx -> getProjekter(ctx));
-       server.get("/getAllUserProjekter",ctx-> getAllUserProjekter(ctx));
+       server.get("/getBrugerProjekt",ctx -> getBrugerProjekt(ctx));
+       server.get("/getAlleBrugerProjekter",ctx-> getAlleBrugerProjekter(ctx));
        server.post("/nystuderende",ctx -> nyStuderende(ctx));
        server.post("/nytprojekt",ctx -> nytprojekt(ctx));
 
@@ -68,34 +65,29 @@ public class Rest_controller {
 
     private static void nyStuderende(@NotNull Context ctx) {
        Studerende studerende = ctx.bodyAsClass(Studerende.class);
-
     }
 
-    private static void getProjekter(@NotNull Context ctx) throws IOException, ExecutionException, InterruptedException {
+    private static void getBrugerProjekt(@NotNull Context ctx) throws IOException, ExecutionException, InterruptedException {
         System.out.println("Getting projekt");
         String id = ctx.queryParam("projektID");
         DocumentSnapshot doc;
-        doc = run.getProjekt(db,id);
+        doc = run.getBrugerProjekt(db,id);
         ctx.json(doc.getData());
     }
 
-    private static void getAllUserProjekter(@NotNull Context ctx)throws IOException, ExecutionException, InterruptedException{
-       String username = ctx.queryParam("username");
-       ArrayList<String> userProjects;
-       userProjects = run.getProjekter(db,username);
-       System.out.println("Our arraylist project dataobject: "+ctx.json(userProjects));
-        System.out.println("Our arraylist in REST:");
-       for (int i = 0; i < userProjects.size(); i++) {
-           System.out.println(userProjects.get(i));
-       }
-
-       ctx.json(userProjects);
+    private static void getAlleBrugerProjekter(@NotNull Context ctx)throws IOException, ExecutionException, InterruptedException{
+       String username = ctx.queryParam("brugernavn");
+       ArrayList<Projekt> brugerProjekter;
+       brugerProjekter = run.getAlleBrugerProjekter(db,username);
+       int size = brugerProjekter.size();
+       ctx.json(size);
+       ctx.json(brugerProjekter);
     }
 
     private static void getStuderende(@NotNull Context ctx) throws ExecutionException, InterruptedException {
         String brugernavn = ctx.queryParam("brugernavn");
         DocumentSnapshot doc;
-        doc = run.getProjekt(db,brugernavn);
+        doc = run.getStuderende(brugernavn,db);
         ctx.json(doc.getData());
     }
 

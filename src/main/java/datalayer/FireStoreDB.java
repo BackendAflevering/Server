@@ -18,13 +18,8 @@ public class FireStoreDB {
         FireStoreDB run = new FireStoreDB();
         Firestore db = run.initializeConnection();
 
-        ArrayList<String> medlemmer = new ArrayList<String>();
-        medlemmer.add("Mark");
-        medlemmer.add("Jens");
-        
-        Projekt projekt = new Projekt("Projekt Sigma",4,medlemmer);
-        //run.addProjekt(projekt,db);
-        //run.getProjekter(db,"Mark");
+        run.getAlleBrugerProjekter(db,"Mark");
+
     }
     public Firestore initializeConnection() throws IOException {
         //System.out.println("Working Directory = " + System.getProperty("user.dir"));
@@ -61,7 +56,7 @@ public class FireStoreDB {
 
     }
 
-    public DocumentSnapshot getProjekt(Firestore db, String projektID) throws ExecutionException, InterruptedException {
+    public DocumentSnapshot getBrugerProjekt(Firestore db, String projektID) throws ExecutionException, InterruptedException {
         DocumentReference docRef = db.collection("Projects").document(projektID);
         // asynchronously retrieve the document
         ApiFuture<DocumentSnapshot> future = docRef.get();
@@ -73,12 +68,12 @@ public class FireStoreDB {
             return document;
         } else {
             System.out.println("No such document!");
+            return null;
         }
-        return null;
     }
 
-    public ArrayList<String> getProjekter(Firestore db, String username) throws ExecutionException, InterruptedException {
-        ArrayList<String> documents = new ArrayList<>();
+    public ArrayList<Projekt> getAlleBrugerProjekter(Firestore db, String username) throws ExecutionException, InterruptedException {
+        ArrayList<Projekt> projects = new ArrayList<>();
 
         CollectionReference projectsref = db.collection("Projects");
         // check medlemmer . equals (username)
@@ -88,10 +83,11 @@ public class FireStoreDB {
         ApiFuture<QuerySnapshot> querySnapshot = searchQuery.get();
         System.out.println("Printing project documents for user "+username+": ");
         for (DocumentSnapshot document : querySnapshot.get().getDocuments()){
-            System.out.println(document.getData().toString());
-            documents.add(document.getData().toString());
+            Projekt projekt = document.toObject(Projekt.class);
+            System.out.println(projekt.toString());
+            projects.add(projekt);
         }
-        return documents;
+        return projects;
     }
 
     public void addStuderende(Studerende studerende, Firestore db) throws ExecutionException, InterruptedException{
@@ -102,5 +98,21 @@ public class FireStoreDB {
     }
     public void updateStuderende(Studerende studerende, Firestore db) throws ExecutionException, InterruptedException{
 
+    }
+
+    public DocumentSnapshot getStuderende(String brugernavn,Firestore db)throws ExecutionException, InterruptedException{
+        DocumentReference docRef = db.collection("Studerende").document(brugernavn);
+        // asynchronously retrieve the document
+        ApiFuture<DocumentSnapshot> future = docRef.get();
+        // ...
+        // future.get() blocks on response
+        DocumentSnapshot document = future.get();
+        if (document.exists()) {
+            System.out.println("Document data: " + document.getData());
+            return document;
+        } else {
+            System.out.println("No such document!");
+            return null;
+        }
     }
 }
