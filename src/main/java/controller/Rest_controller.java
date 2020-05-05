@@ -43,9 +43,19 @@ public class Rest_controller {
        server.get("/getAlleBrugerProjekter",ctx-> getAlleBrugerProjekter(ctx));
        server.post("/nyStuderende",ctx -> nyStuderende(ctx));
        server.post("/nytProjekt",ctx -> nytprojekt(ctx));
+       server.post("/opdaterProjekt",ctx ->opdaterProjekt(ctx));
    }
 
-   private static void login(@NotNull Context ctx) throws ExecutionException, InterruptedException {
+    private void opdaterProjekt(Context ctx) throws ExecutionException, InterruptedException {
+       Projekt projekt = ctx.bodyAsClass(Projekt.class);
+       System.out.println("Skal til at opdatere et projekt: ");
+       System.out.println(ctx.body());
+        if (run.updateProjekt(db,projekt)){
+            ctx.json(projekt);
+        } else {ctx.status(500).result("Server Error");}
+    }
+
+    private static void login(@NotNull Context ctx) throws ExecutionException, InterruptedException {
 
        String brugernavn = ctx.queryParam("brugernavn");
        String kodeord = ctx.queryParam("kodeord");

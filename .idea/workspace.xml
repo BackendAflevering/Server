@@ -24,10 +24,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99718a6f-3a39-4950-aa36-d984efa549f9" name="Default Changelist" comment="Rettede get metoder til at tage imod Json og fiksede brugerlogin">
-      <change beforePath="$PROJECT_DIR$/src/main/java/logik/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logik/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/Rest_controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/Rest_controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/datalayer/FireStoreDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/datalayer/FireStoreDB.class" afterDir="false" />
+    <list default="true" id="99718a6f-3a39-4950-aa36-d984efa549f9" name="Default Changelist" comment="NU har jeg fikset login">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Rest_controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Rest_controller.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,7 +158,7 @@
       <workItem from="1587665910685" duration="1754000" />
       <workItem from="1587713931129" duration="2118000" />
       <workItem from="1588265079000" duration="8330000" />
-      <workItem from="1588664699939" duration="11793000" />
+      <workItem from="1588664699939" duration="14238000" />
     </task>
     <task id="LOCAL-00001" summary="har lavet nytprojekt og nystuderende handlers i controlleren.">
       <created>1586856964899</created>
@@ -259,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588681061349</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="NU har jeg fikset login">
+      <created>1588681520266</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1588681520266</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TodoView">
@@ -297,7 +303,8 @@
     <MESSAGE value="Har ændret i URL'erne og så har jeg fikset så den sender det rigtige Json objekt afsted til frontend." />
     <MESSAGE value="Push til Mark" />
     <MESSAGE value="Rettede get metoder til at tage imod Json og fiksede brugerlogin" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rettede get metoder til at tage imod Json og fiksede brugerlogin" />
+    <MESSAGE value="NU har jeg fikset login" />
+    <option name="LAST_COMMIT_MESSAGE" value="NU har jeg fikset login" />
   </component>
   <component name="WindowStateProjectService">
     <state x="436" y="97" key="#Project_Structure" timestamp="1588272616356" />
@@ -312,22 +319,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1588681423397" />
-    <state width="1877" height="242" key="GridCell.Tab.0.bottom" timestamp="1588681280013">
+    <state width="1877" height="242" key="GridCell.Tab.0.bottom" timestamp="1588681463678">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="242" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588681280013" />
-    <state width="1877" height="242" key="GridCell.Tab.0.center" timestamp="1588681280013">
+    <state width="1877" height="242" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588681463678" />
+    <state width="1877" height="242" key="GridCell.Tab.0.center" timestamp="1588681463678">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="242" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588681280013" />
-    <state width="1877" height="242" key="GridCell.Tab.0.left" timestamp="1588681280013">
+    <state width="1877" height="242" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588681463678" />
+    <state width="1877" height="242" key="GridCell.Tab.0.left" timestamp="1588681463678">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="242" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588681280013" />
-    <state width="1877" height="242" key="GridCell.Tab.0.right" timestamp="1588681280013">
+    <state width="1877" height="242" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588681463678" />
+    <state width="1877" height="242" key="GridCell.Tab.0.right" timestamp="1588681463678">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="242" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588681280013" />
+    <state width="1877" height="242" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588681463678" />
     <state width="923" height="347" key="GridCell.Tab.1.bottom" timestamp="1588673601631">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -348,10 +355,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1588664795625" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1588681064148">
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1588681525023">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1588681064148" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1588681525023" />
     <state x="765" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588272616358" />
     <state x="765" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1588272616358" />
     <state x="1103" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1588272616358" />

@@ -51,13 +51,16 @@ public class FireStoreDB {
         }
     }
 
-    public void updateProjekt(Firestore db,Projekt projekt) throws ExecutionException, InterruptedException {
-        Map<String,Object> docData = new HashMap<>();
-        DocumentReference ProjektRef = db.collection("Projects").document("projektID");
-
-        docData.put("projektnavn",projekt.getProjektnavn()); // user.getFirstName
-        docData.put("projekttid",projekt.getProjekttid()); // user.getLastName
-        //docData.put("medlemmer",projekt.getMedlemmer()); // user.getLastName
+    public boolean updateProjekt(Firestore db,Projekt projekt) throws ExecutionException, InterruptedException {
+        try{
+            ApiFuture<WriteResult> future = db.collection("Projects").document(projekt.getProjektnavn()).set(projekt);
+            System.out.println("Databasen blev opdateret : "+ future.get().getUpdateTime());
+            return true;
+        }
+        catch (Exception e){
+            System.out.println("Kunne ikke opdatere projekt");
+            return false;
+        }
     }
 
     public Projekt getBrugerProjekt(Firestore db, String projektID) throws ExecutionException, InterruptedException {
