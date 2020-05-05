@@ -18,6 +18,7 @@ public class Login {
         qname = new QName("http://soap.transport.brugerautorisation/", "BrugeradminImplPort");
         Brugeradmin ba = service.getPort(qname, Brugeradmin.class);
         try{
+            ba.hentBruger(brugernavn, adgangskode);
             return true;
         } catch (SOAPFaultException e) {
             System.out.println("Forkert brugernavn eller kodeord");
