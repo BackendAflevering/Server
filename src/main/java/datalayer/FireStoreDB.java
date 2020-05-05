@@ -19,7 +19,6 @@ public class FireStoreDB {
         Firestore db = run.initializeConnection();
 
         run.getAlleBrugerProjekter(db,"Mark");
-
     }
     public Firestore initializeConnection() throws IOException {
         //System.out.println("Working Directory = " + System.getProperty("user.dir"));

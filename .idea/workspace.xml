@@ -24,19 +24,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99718a6f-3a39-4950-aa36-d984efa549f9" name="Default Changelist" comment="lavet en gitignore">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_21-04-2020_12_33__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_21-04-2020_12_33__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24-04-2020_11_26__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24-04-2020_11_26__Default_Changelist_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="99718a6f-3a39-4950-aa36-d984efa549f9" name="Default Changelist" comment="Har ændret i URL'erne og så har jeg fikset så den sender det rigtige Json objekt afsted til frontend.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Rest_controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Rest_controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/datalayer/FireStoreDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datalayer/FireStoreDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/datalayer/Projekt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datalayer/Projekt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/datalayer/Studerende.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datalayer/Studerende.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/Rest_controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/Rest_controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/datalayer/FireStoreDB.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/datalayer/FireStoreDB.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +81,7 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
@@ -167,7 +157,8 @@
       <workItem from="1587640850568" duration="2599000" />
       <workItem from="1587665910685" duration="1754000" />
       <workItem from="1587713931129" duration="2118000" />
-      <workItem from="1588265079000" duration="8163000" />
+      <workItem from="1588265079000" duration="8330000" />
+      <workItem from="1588664699939" duration="2487000" />
     </task>
     <task id="LOCAL-00001" summary="har lavet nytprojekt og nystuderende handlers i controlleren.">
       <created>1586856964899</created>
@@ -246,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588001224371</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Har ændret i URL'erne og så har jeg fikset så den sender det rigtige Json objekt afsted til frontend.">
+      <created>1588283111200</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1588283111200</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TodoView">
@@ -281,7 +279,8 @@
     <MESSAGE value="Lavet en main" />
     <MESSAGE value="ARRRKHKLFJDJSAKLAS MANIFEST FUCK OFF" />
     <MESSAGE value="Added getAllProjects in db/rest controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added getAllProjects in db/rest controller" />
+    <MESSAGE value="Har ændret i URL'erne og så har jeg fikset så den sender det rigtige Json objekt afsted til frontend." />
+    <option name="LAST_COMMIT_MESSAGE" value="Har ændret i URL'erne og så har jeg fikset så den sender det rigtige Json objekt afsted til frontend." />
   </component>
   <component name="WindowStateProjectService">
     <state x="436" y="97" key="#Project_Structure" timestamp="1588272616356" />
@@ -294,26 +293,30 @@
     <state x="1170" y="270" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1588272616358" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1588272616358" />
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1588272616358" />
-    <state width="1877" height="137" key="GridCell.Tab.0.bottom" timestamp="1588281629618">
+    <state width="1877" height="137" key="GridCell.Tab.0.bottom" timestamp="1588283127688">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="137" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588281629618" />
-    <state width="1877" height="137" key="GridCell.Tab.0.center" timestamp="1588281629618">
+    <state width="1877" height="137" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588283127688" />
+    <state width="1877" height="137" key="GridCell.Tab.0.center" timestamp="1588283127687">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="137" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588281629618" />
-    <state width="1877" height="137" key="GridCell.Tab.0.left" timestamp="1588281629618">
+    <state width="1877" height="137" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588283127687" />
+    <state width="1877" height="137" key="GridCell.Tab.0.left" timestamp="1588283127687">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="137" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588281629618" />
-    <state width="1877" height="137" key="GridCell.Tab.0.right" timestamp="1588281629618">
+    <state width="1877" height="137" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588283127687" />
+    <state width="1877" height="137" key="GridCell.Tab.0.right" timestamp="1588283127688">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="137" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588281629618" />
-    <state x="440" y="94" key="SettingsEditor" timestamp="1588272616358" />
-    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1588272616358" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1588272616358" />
-    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1588272616358" />
+    <state width="1877" height="137" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588283127688" />
+    <state x="440" y="94" key="SettingsEditor" timestamp="1588664795625">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1588664795625" />
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1588283118383">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="240" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1588283118383" />
     <state x="765" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1588272616358" />
     <state x="765" y="437" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1588272616358" />
     <state x="1103" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1588272616358" />
