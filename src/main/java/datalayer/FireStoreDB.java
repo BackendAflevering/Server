@@ -39,10 +39,16 @@ public class FireStoreDB {
         return db;
     }
 
-    public void addProjekt(Projekt projekt,Firestore db) throws ExecutionException, InterruptedException {
+    public boolean addProjekt(Projekt projekt,Firestore db) throws ExecutionException, InterruptedException {
+        try{
         ApiFuture<WriteResult> future = db.collection("Projects").document(projekt.getProjektnavn()).set(projekt);
-
-        System.out.println("Database was updated at time : "+ future.get().getUpdateTime());
+        System.out.println("Databasen blev opdateret : "+ future.get().getUpdateTime());
+        return true;
+        }
+        catch (Exception e){
+            System.out.println("Kunne ikke oprette projekt");
+            return false;
+        }
     }
 
     public void updateProjekt(Firestore db,Projekt projekt) throws ExecutionException, InterruptedException {
@@ -52,27 +58,26 @@ public class FireStoreDB {
         docData.put("projektnavn",projekt.getProjektnavn()); // user.getFirstName
         docData.put("projekttid",projekt.getProjekttid()); // user.getLastName
         //docData.put("medlemmer",projekt.getMedlemmer()); // user.getLastName
-
     }
 
-    public DocumentSnapshot getBrugerProjekt(Firestore db, String projektID) throws ExecutionException, InterruptedException {
+    public Projekt getBrugerProjekt(Firestore db, String projektID) throws ExecutionException, InterruptedException {
         DocumentReference docRef = db.collection("Projects").document(projektID);
-        // asynchronously retrieve the document
+        // henter dokument
         ApiFuture<DocumentSnapshot> future = docRef.get();
-        // ...
-        // future.get() blocks on response
-        DocumentSnapshot document = future.get();
-        if (document.exists()) {
-            System.out.println("Document data: " + document.getData());
-            return document;
+
+        DocumentSnapshot dokument = future.get();
+        if (dokument.exists()) {
+            Projekt projekt = dokument.toObject(Projekt.class);
+            System.out.println("Dokument data: " + dokument.getData());
+            return projekt;
         } else {
-            System.out.println("No such document!");
+            System.out.println("Kunne ikke finde dokument!");
             return null;
         }
     }
 
     public ArrayList<Projekt> getAlleBrugerProjekter(Firestore db, String username) throws ExecutionException, InterruptedException {
-        ArrayList<Projekt> projects = new ArrayList<>();
+        ArrayList<Projekt> projekter = new ArrayList<>();
 
         CollectionReference projectsref = db.collection("Projects");
         // check medlemmer . equals (username)
@@ -80,37 +85,42 @@ public class FireStoreDB {
         Query searchQuery = projectsref.whereArrayContains("medlemmer",username);
 
         ApiFuture<QuerySnapshot> querySnapshot = searchQuery.get();
-        System.out.println("Printing project documents for user "+username+": ");
-        for (DocumentSnapshot document : querySnapshot.get().getDocuments()){
-            Projekt projekt = document.toObject(Projekt.class);
-            System.out.println(projekt.toString());
-            projects.add(projekt);
+        System.out.println("Downloader projekt dokumenter for bruger "+username+": ");
+        for (DocumentSnapshot dokument : querySnapshot.get().getDocuments()){
+            Projekt projekt = dokument.toObject(Projekt.class);
+            projekter.add(projekt);
         }
-        return projects;
+        return projekter;
     }
 
-    public void addStuderende(Studerende studerende, Firestore db) throws ExecutionException, InterruptedException{
-
+    public boolean addStuderende(Studerende studerende, Firestore db) throws ExecutionException, InterruptedException{
+        try{
         ApiFuture<WriteResult> future = db.collection("Studerende").document(studerende.getBrugernavn()).set(studerende);
-
-        System.out.println("Database was updated at time : "+ future.get().getUpdateTime());
+        System.out.println("Databasen blev opdateret : "+ future.get().getUpdateTime());
+            return true;
+        }
+        catch (Exception e){
+            System.out.println("Kunne ikke oprette studerende!");
+            return false;
+        }
     }
+
     public void updateStuderende(Studerende studerende, Firestore db) throws ExecutionException, InterruptedException{
 
     }
 
-    public DocumentSnapshot getStuderende(String brugernavn,Firestore db)throws ExecutionException, InterruptedException{
+    public Studerende getStuderende(String brugernavn,Firestore db)throws ExecutionException, InterruptedException{
         DocumentReference docRef = db.collection("Studerende").document(brugernavn);
-        // asynchronously retrieve the document
+        // henter dokument
         ApiFuture<DocumentSnapshot> future = docRef.get();
-        // ...
-        // future.get() blocks on response
-        DocumentSnapshot document = future.get();
-        if (document.exists()) {
-            System.out.println("Document data: " + document.getData());
-            return document;
+
+        DocumentSnapshot dokument = future.get();
+        if (dokument.exists()) {
+            System.out.println("Dokument data: " + dokument.getData());
+            Studerende studerende = dokument.toObject(Studerende.class);
+            return studerende;
         } else {
-            System.out.println("No such document!");
+            System.out.println("Kunne ikke finde dokument!");
             return null;
         }
     }

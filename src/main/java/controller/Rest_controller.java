@@ -1,5 +1,6 @@
 package controller;
 
+import com.google.api.client.json.Json;
 import com.google.cloud.firestore.DocumentSnapshot;
 import com.google.cloud.firestore.Firestore;
 import datalayer.FireStoreDB;
@@ -30,6 +31,7 @@ public class Rest_controller {
    public void start() throws Exception{
        run = new FireStoreDB();
        db = run.initializeConnection();
+       login = new Login();
        if (server!=null) return;
 
        server = Javalin.create().start(8080);
@@ -39,69 +41,83 @@ public class Rest_controller {
        server.get("/getStuderende",ctx -> getStuderende(ctx));
        server.get("/getBrugerProjekt",ctx -> getBrugerProjekt(ctx));
        server.get("/getAlleBrugerProjekter",ctx-> getAlleBrugerProjekter(ctx));
-       server.post("/nystuderende",ctx -> nyStuderende(ctx));
-       server.post("/nytprojekt",ctx -> nytprojekt(ctx));
-
+       server.post("/nyStuderende",ctx -> nyStuderende(ctx));
+       server.post("/nytProjekt",ctx -> nytprojekt(ctx));
    }
 
-   private static void login(@NotNull Context ctx) throws MalformedURLException {
+   private static void login(@NotNull Context ctx) throws ExecutionException, InterruptedException {
+
        String brugernavn = ctx.queryParam("brugernavn");
        String kodeord = ctx.queryParam("kodeord");
-       System.out.println("Brugernavn: "+brugernavn+" og kodeord: "+kodeord);
-       if (!brugernavn.isEmpty() || !kodeord.isEmpty()) {
-           try {
-               boolean a = login.tjekLogin(brugernavn,kodeord);
-               System.out.println("Login: "+a);
-           }catch (Exception e){
-               server.stop();
-               System.out.println(e);
-           }
 
-       } else {
-           ctx.contentType("text/html; charset=utf-8").result("<html><body><form method=get>Skriv dit fornavn: <input name=brugernavn type=text></form></html>");
-           ctx.contentType("text/html; charset=utf-8").result("<html><body><form method=get>Skriv dit fornavn: <input name=kodeord type=text></form></html>");
-       }
+            System.out.println("Brugernavn: "+brugernavn+" og kodeord: "+kodeord);
+               try {
+                   if (login.tjekLogin(brugernavn,kodeord)){
+                       System.out.println("Login: Succes");
+                       ctx.status(200).result("Succes");
+                   }
+                   else {
+                       System.out.println("Login: Failed");
+                       ctx.status(401).result("Unauthorized");
+                   }
+               }catch (MalformedURLException e){
+                   e.printStackTrace();
+                   ctx.status(500).result("Server Error");
+               }
+
     }
 
-    private static void nyStuderende(@NotNull Context ctx) {
+    private static void nyStuderende(@NotNull Context ctx) throws ExecutionException, InterruptedException {
        Studerende studerende = ctx.bodyAsClass(Studerende.class);
+        System.out.println("Skal til at oprette en ny Studerende: ");
+        System.out.println(ctx.body());
+       if (run.addStuderende(studerende,db)){
+           ctx.json(studerende);
+       } else {ctx.status(500).result("Server Error");}
+
     }
 
     private static void getBrugerProjekt(@NotNull Context ctx) throws IOException, ExecutionException, InterruptedException {
         System.out.println("Getting projekt");
         String id = ctx.queryParam("projektID");
-        DocumentSnapshot doc;
-        doc = run.getBrugerProjekt(db,id);
-        ctx.json(doc.getData());
+
+        Projekt projekt = run.getBrugerProjekt(db,id);
+        if (projekt != null){
+        ctx.json(projekt);
+        }
+        else{ctx.status(404).result("Not Found");}
     }
 
     private static void getAlleBrugerProjekter(@NotNull Context ctx)throws IOException, ExecutionException, InterruptedException{
        String username = ctx.queryParam("brugernavn");
        ArrayList<Projekt> brugerProjekter;
        brugerProjekter = run.getAlleBrugerProjekter(db,username);
-       int size = brugerProjekter.size();
-       ctx.json(size);
-       ctx.json(brugerProjekter);
+       if(!brugerProjekter.isEmpty()){
+        for(int i = 0; i < brugerProjekter.size(); i++){
+            System.out.println(brugerProjekter.get(i).toString());
+        }
+           ctx.json(brugerProjekter);}
+       else {
+           System.out.println("404: Not Found");
+           ctx.status(404).result("Not Found");
+       }
     }
 
     private static void getStuderende(@NotNull Context ctx) throws ExecutionException, InterruptedException {
         String brugernavn = ctx.queryParam("brugernavn");
-        DocumentSnapshot doc;
-        doc = run.getStuderende(brugernavn,db);
-        ctx.json(doc.getData());
+        Studerende studerende = run.getStuderende(brugernavn,db);
+        if (studerende!=null){
+            ctx.json(studerende);
+        }
+        else{ ctx.status(404).result("Not Found");}
     }
 
     private static void nytprojekt(@NotNull Context ctx) throws ExecutionException, InterruptedException {
-       String projektnavn = ctx.queryParam("projektnavn");
-       String tid = ctx.queryParam("projekttid");
-       String medlem = ctx.queryParam("medlemmer");
-       ArrayList<String> medlemmer = new ArrayList<>();
-       medlemmer.add(medlem);
-       int projekttid = Integer.valueOf(tid);
-        System.out.println("Skal til at skabe et nyt projekt");
+       Projekt projekt = ctx.bodyAsClass(Projekt.class);
+        System.out.println("Skal til at oprette et nyt projekt");
         System.out.println(ctx.body());
-        Projekt projekt = new Projekt(projektnavn,projekttid,medlemmer);
-        run.addProjekt(projekt,db);
-        ctx.json(projekt);
+        if(run.addProjekt(projekt,db)){
+        ctx.json(projekt);}
+        else{ctx.status(500).result("Server Error");}
     }
 }
