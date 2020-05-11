@@ -8,18 +8,22 @@ public class Studerende {
 
     private String brugernavn;
     private String gruppe;
+    String kode;
     private long ugetid;
     private boolean gruppeleder;
     private List<String> projekter;
 
-    public Studerende(String brugernavn, String gruppe, long ugetid, boolean gruppeleder, List<String> projekter){
+    public Studerende(String brugernavn, String gruppe, String kode,long ugetid, boolean gruppeleder, List<String> projekter){
         this.brugernavn = brugernavn;
+        this.kode = kode;
         this.gruppe = gruppe;
         this.ugetid = ugetid;
         this.gruppeleder = gruppeleder;
         this.projekter = projekter;
     }
     public Studerende(){}
+
+    public Studerende(String brugernavn, String kodeord){}
 
     public static long getSerialVersionUID() {
         return serialVersionUID;
@@ -28,6 +32,8 @@ public class Studerende {
     public String getBrugernavn() {
         return brugernavn;
     }
+
+    public String getKode(){return kode;}
 
     public String getGruppe() {
         return gruppe;
