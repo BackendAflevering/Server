@@ -57,14 +57,11 @@ public class Rest_controller {
 
     private static void login(@NotNull Context ctx) throws ExecutionException, InterruptedException {
 
-       //String brugernavn = ctx.queryParam("brugernavn");
-       //String kodeord = ctx.queryParam("kodeord");
+       String brugernavn = ctx.queryParam("brugernavn");
+       String kodeord = ctx.queryParam("kodeord");
 
-       Studerende studerende = ctx.bodyAsClass(Studerende.class);
-
-            System.out.println("Brugernavn: "+studerende.getBrugernavn()+" og kodeord: "+studerende.getKode());
                try {
-                   if (login.tjekLogin(studerende.getBrugernavn(),studerende.getKode())){
+                   if (login.tjekLogin(brugernavn,kodeord)){
                        System.out.println("Login: Succes");
                        ctx.status(200).result("Succes");
                    }

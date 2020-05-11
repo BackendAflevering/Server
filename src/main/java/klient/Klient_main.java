@@ -1,5 +1,6 @@
 package klient;
 
+import datalayer.Projekt;
 import datalayer.Studerende;
 import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.client.ClientProperties;
@@ -23,27 +24,31 @@ public class Klient_main {
         config.property(ClientProperties.READ_TIMEOUT,5000);
         client = ClientBuilder.newClient(config);
         WebTarget target = client.target(localurl);
-        login(target);
-        getProjekter("jenje");
+        //login(target);
+        getProjekter(brugernavn, target);
     }
+
+    //Login metode. Metoden tager imod destinations url'en.
     public static boolean login(WebTarget target){
         Boolean status = false;
         System.out.println("Venligst indtast brugernavn: ");
         brugernavn = input.nextLine();
         System.out.println("Venligst indtast kodeord: ");
         String kodeord = input.nextLine();
+
+        //Vi tilføjer login til stien så vi kan kalde en specific resoruce.
         WebTarget login = target.path("login");
         Invocation.Builder builder = login.request(MediaType.TEXT_PLAIN_TYPE);
         Studerende studerende = new Studerende(brugernavn,kodeord);
         response = builder.post(Entity.entity(studerende, MediaType.APPLICATION_JSON_TYPE));
+
         return status;
     }
 
-    public static void getProjekter(String brugernavn){
-        //String s = target.path("getAlleBrugerProjekter?brugernavn="+brugernavn).request().get(String.class);
-        response = client.target("http://192.168.1.1:8080/getAlleBrugerProjekter?brugernavn=").request(MediaType.TEXT_PLAIN_TYPE).get();
-        String svar = response.readEntity(String.class);
-        System.out.println(svar);
+    public static void getProjekter(String brugernavn, WebTarget target){
+        WebTarget projekter = target.path("getAlleBrugerProjekter"+brugernavn);
+        Invocation.Builder builder = projekter.request(MediaType.APPLICATION_JSON_TYPE);
+        response = builder.get();
     }
 
 }

@@ -13,6 +13,8 @@ public class Studerende {
     private boolean gruppeleder;
     private List<String> projekter;
 
+    public Studerende(){}
+
     public Studerende(String brugernavn, String gruppe, String kode,long ugetid, boolean gruppeleder, List<String> projekter){
         this.brugernavn = brugernavn;
         this.kode = kode;
@@ -21,7 +23,6 @@ public class Studerende {
         this.gruppeleder = gruppeleder;
         this.projekter = projekter;
     }
-    public Studerende(){}
 
     public Studerende(String brugernavn, String kodeord){}
 
