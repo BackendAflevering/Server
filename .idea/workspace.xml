@@ -24,9 +24,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99718a6f-3a39-4950-aa36-d984efa549f9" name="Default Changelist" comment="Lavede login om til param igen.">
+    <list default="true" id="99718a6f-3a39-4950-aa36-d984efa549f9" name="Default Changelist" comment="Klient">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/klient/Klient_main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/klient/Klient_main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +80,7 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
@@ -175,7 +174,8 @@
       <workItem from="1588265079000" duration="8330000" />
       <workItem from="1588664699939" duration="15249000" />
       <workItem from="1589136642021" duration="30000" />
-      <workItem from="1589177537559" duration="9729000" />
+      <workItem from="1589177537559" duration="10068000" />
+      <workItem from="1589187652845" duration="47000" />
     </task>
     <task id="LOCAL-00001" summary="har lavet nytprojekt og nystuderende handlers i controlleren.">
       <created>1586856964899</created>
@@ -303,7 +303,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589187100049</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Klient">
+      <created>1589187548423</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1589187548423</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TodoView">
@@ -331,6 +338,9 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/flutter" />
+    </ignored-roots>
     <MESSAGE value="har lavet nytprojekt og nystuderende handlers i controlleren." />
     <MESSAGE value="Kan nu skrive data til firestore" />
     <MESSAGE value="now dynamic key path" />
@@ -345,7 +355,8 @@
     <MESSAGE value="Man kan opdatere et projekt" />
     <MESSAGE value="prøver login som json" />
     <MESSAGE value="Lavede login om til param igen." />
-    <option name="LAST_COMMIT_MESSAGE" value="Lavede login om til param igen." />
+    <MESSAGE value="Klient" />
+    <option name="LAST_COMMIT_MESSAGE" value="Klient" />
   </component>
   <component name="WindowStateProjectService">
     <state x="436" y="97" key="#Project_Structure" timestamp="1588272616356" />
@@ -360,22 +371,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1589184180792" />
-    <state width="984" height="359" key="GridCell.Tab.0.bottom" timestamp="1589187113862">
+    <state width="1877" height="126" key="GridCell.Tab.0.bottom" timestamp="1589187616338">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="984" height="359" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589187113862" />
-    <state width="984" height="359" key="GridCell.Tab.0.center" timestamp="1589187113862">
+    <state width="1877" height="126" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589187616338" />
+    <state width="1877" height="126" key="GridCell.Tab.0.center" timestamp="1589187616338">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="984" height="359" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589187113862" />
-    <state width="984" height="359" key="GridCell.Tab.0.left" timestamp="1589187113862">
+    <state width="1877" height="126" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589187616338" />
+    <state width="1877" height="126" key="GridCell.Tab.0.left" timestamp="1589187616338">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="984" height="359" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589187113862" />
-    <state width="984" height="359" key="GridCell.Tab.0.right" timestamp="1589187113862">
+    <state width="1877" height="126" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589187616338" />
+    <state width="1877" height="126" key="GridCell.Tab.0.right" timestamp="1589187616338">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="984" height="359" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589187113862" />
+    <state width="1877" height="126" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589187616338" />
     <state width="923" height="347" key="GridCell.Tab.1.bottom" timestamp="1588673601631">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -400,10 +411,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="982" y="338" width="389" height="534" key="MultipleFileMergeDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1589177751413" />
-    <state x="440" y="94" key="SettingsEditor" timestamp="1588664795625">
+    <state x="440" y="94" key="SettingsEditor" timestamp="1589187699206">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1588664795625" />
+    <state x="440" y="94" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1589187699206" />
     <state x="552" y="240" key="Vcs.Push.Dialog.v2" timestamp="1588684401983">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
