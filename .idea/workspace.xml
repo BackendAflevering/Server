@@ -24,14 +24,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="99718a6f-3a39-4950-aa36-d984efa549f9" name="Default Changelist" comment="prøver login som json">
+    <list default="true" id="99718a6f-3a39-4950-aa36-d984efa549f9" name="Default Changelist" comment="Lavede login om til param igen.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controller/Rest_controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controller/Rest_controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/datalayer/Studerende.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/datalayer/Studerende.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/klient/Klient_main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/klient/Klient_main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/controller/Rest_controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/controller/Rest_controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/datalayer/Studerende.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/datalayer/Studerende.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/klient/Klient_main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/klient/Klient_main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +93,7 @@
       <recent name="C:\Users\Mark\IdeaProjects\Server\src\main\java" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Server_main">
+  <component name="RunManager" selected="Application.Rest_controller">
     <configuration name="FireStoreDB" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="datalayer.FireStoreDB" />
       <module name="Server" />
@@ -153,8 +148,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Server_main" />
         <item itemvalue="Application.Klient_main" />
+        <item itemvalue="Application.Server_main" />
         <item itemvalue="Application.FireStoreDB" />
         <item itemvalue="Application.Rest_controller" />
       </list>
@@ -180,7 +175,7 @@
       <workItem from="1588265079000" duration="8330000" />
       <workItem from="1588664699939" duration="15249000" />
       <workItem from="1589136642021" duration="30000" />
-      <workItem from="1589177537559" duration="9410000" />
+      <workItem from="1589177537559" duration="9729000" />
     </task>
     <task id="LOCAL-00001" summary="har lavet nytprojekt og nystuderende handlers i controlleren.">
       <created>1586856964899</created>
@@ -301,7 +296,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589185639063</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Lavede login om til param igen.">
+      <created>1589187100049</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1589187100049</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TodoView">
@@ -342,7 +344,8 @@
     <MESSAGE value="NU har jeg fikset login" />
     <MESSAGE value="Man kan opdatere et projekt" />
     <MESSAGE value="prøver login som json" />
-    <option name="LAST_COMMIT_MESSAGE" value="prøver login som json" />
+    <MESSAGE value="Lavede login om til param igen." />
+    <option name="LAST_COMMIT_MESSAGE" value="Lavede login om til param igen." />
   </component>
   <component name="WindowStateProjectService">
     <state x="436" y="97" key="#Project_Structure" timestamp="1588272616356" />
@@ -357,22 +360,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1589184180792" />
-    <state width="1164" height="359" key="GridCell.Tab.0.bottom" timestamp="1589186048914">
+    <state width="984" height="359" key="GridCell.Tab.0.bottom" timestamp="1589187113862">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1164" height="359" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589186048914" />
-    <state width="1164" height="359" key="GridCell.Tab.0.center" timestamp="1589186048914">
+    <state width="984" height="359" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1589187113862" />
+    <state width="984" height="359" key="GridCell.Tab.0.center" timestamp="1589187113862">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1164" height="359" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589186048914" />
-    <state width="1164" height="359" key="GridCell.Tab.0.left" timestamp="1589186048914">
+    <state width="984" height="359" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1589187113862" />
+    <state width="984" height="359" key="GridCell.Tab.0.left" timestamp="1589187113862">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1164" height="359" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589186048914" />
-    <state width="1164" height="359" key="GridCell.Tab.0.right" timestamp="1589186048914">
+    <state width="984" height="359" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1589187113862" />
+    <state width="984" height="359" key="GridCell.Tab.0.right" timestamp="1589187113862">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1164" height="359" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589186048914" />
+    <state width="984" height="359" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1589187113862" />
     <state width="923" height="347" key="GridCell.Tab.1.bottom" timestamp="1588673601631">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

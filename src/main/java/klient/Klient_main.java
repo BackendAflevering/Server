@@ -24,7 +24,7 @@ public class Klient_main {
         config.property(ClientProperties.READ_TIMEOUT,5000);
         client = ClientBuilder.newClient(config);
         WebTarget target = client.target(localurl);
-        //login(target);
+        //if (login(target) == true) {getProjekter(brugernavn,target);}
         getProjekter(brugernavn, target);
     }
 
@@ -41,8 +41,10 @@ public class Klient_main {
         Invocation.Builder builder = login.request(MediaType.TEXT_PLAIN_TYPE);
         Studerende studerende = new Studerende(brugernavn,kodeord);
         response = builder.post(Entity.entity(studerende, MediaType.APPLICATION_JSON_TYPE));
-
-        return status;
+        if (response.getStatus() == 200){
+            return true;
+        }
+        return false;
     }
 
     public static void getProjekter(String brugernavn, WebTarget target){
